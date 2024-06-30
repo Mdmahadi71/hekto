@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../Container'
+import Container from './Container'
 import feature from '../assets/chayar.png'
 import { FaCartArrowDown,FaRegHeart  } from "react-icons/fa";
 import { MdOutlineZoomIn } from "react-icons/md";

@@ -1,12 +1,14 @@
 import './App.css'
-import Container from './Container'
-import Flex from './Flex'
-import What from './What'
 import Banner from './components/Banner'
+import Cate from './components/Cate'
+import Discount from './components/Discount'
 import Featured from './components/Featured'
 import Leatest from './components/Leatest'
 import Menu from './components/Menu'
 import Navbar from './components/Navbar'
+import Trending from './components/Trending'
+import Unique from './components/Unique'
+import Whatss from './components/Whatss'
 
 function App() {
 
@@ -17,7 +19,11 @@ function App() {
      <Banner/>
      <Featured/>
      <Leatest/>
-     <What/>
+     <Whatss/>
+     <Unique/>
+     <Trending/>
+     <Discount/>
+     <Cate/>
     </>
   )
 }

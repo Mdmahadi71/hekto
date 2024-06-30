@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../Container'
+import Container from './Container'
 import Hakto from '../assets/Hekto.png'
 import { CiSearch } from "react-icons/ci";
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { CiMail } from "react-icons/ci";
-import Container from '../Container'
+import Container from './Container'
 import { FaPhoneAlt,FaRegHeart ,FaCartArrowDown  } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FcManager } from "react-icons/fc";
