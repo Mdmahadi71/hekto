@@ -24,7 +24,7 @@ const Leatest = () => {
                   <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />
@@ -43,7 +43,7 @@ const Leatest = () => {
                   <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />
@@ -62,7 +62,7 @@ const Leatest = () => {
                   <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />
@@ -78,12 +78,13 @@ const Leatest = () => {
                           </div>
                       </div>
                   </div>
+                
               </div>
               <div className=" flex justify-between mt-[20px]">
-                  <div className="w-[32%]">
+              <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />
@@ -102,7 +103,7 @@ const Leatest = () => {
                   <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />
@@ -121,7 +122,7 @@ const Leatest = () => {
                   <div className="w-[32%]">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
-                              <img src={leatest} className='translate-x-[50%] py-[50px]' alt="" />
+                              <img src={leatest} className='translate-x-[61%] py-[50px]' alt="" />
                               <div className=" absolute bottom-[-150px] left-[30px] gap-y-[20px] group-hover:bottom-[50px] duration-500">
                                   <FaCartArrowDown className=' my-4 text-[24px] text-[#2F1AC4]' />
                                   <CiHeart className=' my-4 text-[24px] text-[#2F1AC4]' />

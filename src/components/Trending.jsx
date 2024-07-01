@@ -73,7 +73,7 @@ const Trending = () => {
 
                 <div className=" flex justify-between py-[20px]">
                     <div className="w-[32%]">
-                        <div className=" border-[1px] border-[#FFF6FB] px-[10px] py-3 bg-[#FFF6FB]">
+                        <div className=" border-[1px] border-[#FFF6FB] h-[300px] w-[400px] px-[10px] py-3 bg-[#FFF6FB]">
                             <div className="">
                                 <h4 className=' font-hakto font-medium text-[26px] text-[#151875]'>23% off in all products</h4>
                                 <p className=' font-hakto font-normal text-[16px] text-[#FB2E86] border-b-[1px] border-[#FB2E86] inline-block'>Shop Now</p>
@@ -84,7 +84,7 @@ const Trending = () => {
                         </div>
                     </div>
                     <div className="w-[32%]">
-                        <div className=" border-[1px] border-[#FFF6FB] px-[10px] py-3 bg-[#FFF6FB]">
+                        <div className=" border-[1px] border-[#FFF6FB]  h-[300px] w-[400px]  px-[10px] py-3 bg-[#FFF6FB]">
                             <div className="">
                                 <h4 className=' font-hakto font-medium text-[26px] text-[#151875]'>23% off in all products</h4>
                                 <p className=' font-hakto font-normal text-[16px] text-[#FB2E86] border-b-[1px] border-[#FB2E86] inline-block'>View Collection</p>
@@ -95,7 +95,7 @@ const Trending = () => {
                         </div>
                     </div>
                     <div className="w-[25%]">
-                        <div className="">
+                        <div className=" h-[300px] w-[300px] ">
                             <div className=" flex gap-x-2 items-center py-2">
                                 <div className=" bg-[#F5F6F8]">
                                     <img src={Trendf} alt="" />
