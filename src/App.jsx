@@ -3,6 +3,7 @@ import Banner from './components/Banner'
 import Cate from './components/Cate'
 import Discount from './components/Discount'
 import Featured from './components/Featured'
+import Fotter from './components/Fotter'
 import Lblog from './components/Lblog'
 import Leatest from './components/Leatest'
 import Menu from './components/Menu'
@@ -28,6 +29,7 @@ function App() {
      <Cate/>
      <Newslater/>
      <Lblog/>
+     <Fotter/>
     </>
   )
 }

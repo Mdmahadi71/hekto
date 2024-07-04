@@ -11,7 +11,7 @@ const Whatss = () => {
             </div>
          <div className=" flex gap-x-1">
             <div className="w-[24%]">
-                <div className=" border-[1px]  px-3 py-[50px] text-center">
+                <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
                     </div>
@@ -23,7 +23,7 @@ const Whatss = () => {
                 </div>
             </div>
             <div className="w-[24%]">
-                <div className=" border-[1px]  px-3 py-[50px] text-center">
+                <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
                     </div>
@@ -35,7 +35,7 @@ const Whatss = () => {
                 </div>
             </div>
             <div className="w-[24%]">
-                <div className=" border-[1px]  px-3 py-[50px] text-center">
+                <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
                     </div>
@@ -47,7 +47,7 @@ const Whatss = () => {
                 </div>
             </div>
             <div className="w-[24%]">
-                <div className=" border-[1px]  px-3 py-[50px] text-center">
+                <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
                     </div>
