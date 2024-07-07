@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Layout from './components/Layout'
 import ShopGrid from './Pages/ShopGrid'
 import ShopList from './Pages/ShopList'
+import Shopsidebar from './Pages/Shopsidebar'
 
 
 
@@ -15,6 +16,7 @@ function App() {
        <Route path="/" element={<Home/>}> </Route>
        <Route path="/ShopGrid" element={<ShopGrid/>}> </Route>
        <Route path="/ShopList" element={<ShopList/>}> </Route>
+       <Route path="/Shopsidebar" element={<Shopsidebar/>}> </Route>
     </Route>
   ))
 
