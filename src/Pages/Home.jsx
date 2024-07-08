@@ -9,6 +9,10 @@ import Newslater from '../components/Newslater'
 import Trending from '../components/Trending'
 import Unique from '../components/Unique'
 import Whatss from '../components/Whatss'
+
+
+
+
 const Home = () => {
   return (
     <div>
