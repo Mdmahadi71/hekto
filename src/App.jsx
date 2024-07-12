@@ -12,6 +12,10 @@ import HektoDemopage from './Pages/HektoDemopage'
 import LoginPage from './Pages/LoginPage'
 import BlogPage from './Pages/BlogPage'
 import About from './Pages/About'
+import SingleBlog from './Pages/SingleBlog'
+import ContactUs from './Pages/ContactUs'
+import Not404 from './Pages/Not404'
+import FAQ from './Pages/FAQ'
 
 
 
@@ -19,7 +23,8 @@ import About from './Pages/About'
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route element={<Layout/>}>
+    <>
+      <Route element={<Layout/>}>
        <Route path="/" element={<Home/>}> </Route>
        <Route path="/ShopGrid" element={<ShopGrid/>}> </Route>
        <Route path="/ShopList" element={<ShopList/>}> </Route>
@@ -31,7 +36,12 @@ function App() {
        <Route path="/LoginPage" element={<LoginPage/>}> </Route>
        <Route path="/BlogPage" element={<BlogPage/>}> </Route>
        <Route path="/About" element={<About/>}> </Route>
+       <Route path="/SingleBlog" element={<SingleBlog/>}> </Route>
+       <Route path="/ContactUs" element={<ContactUs/>}> </Route>
+       <Route path="/Faq" element={<FAQ/>}> </Route>
     </Route>
+    <Route path="/not404" element={<Not404/>}> </Route>
+    </>
   ))
 
   return (
