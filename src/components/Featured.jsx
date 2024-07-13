@@ -6,27 +6,15 @@ import { MdOutlineZoomIn } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { DataApi } from './ContextApi';
 
-import axios from 'axios';
-// import { DataApi } from './ContextApi';
+
 
 
 const Featured = () => {
-
-    //  let data = useContext(DataApi)
-    //  console.log(data);
-    let [item , setitem] = useState([])
+     let data = useContext(DataApi)
     
-
-    let getdata =(()=>{
-        axios.get(('https://dummyjson.com/products')).then((response)=>{
-            setitem(response.data.products);
-            
-        })
-    })
-    useEffect(() => {
-        getdata()
-    }, [])
+ 
    
 
 
@@ -73,7 +61,7 @@ const Featured = () => {
         </div>
        
         <Slider {...settings}>
-            {item.map((items)=>(
+            {data.map((items)=>(
                 <div className="flex w-[25%]" >
                 <div className="bg-[#F6F7FB] shadow-xl">
                     <div className=" relative  group overflow-hidden">
@@ -93,7 +81,7 @@ const Featured = () => {
                             </button>
                         </div>
                         <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-200 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-200'>Cantilever chair</h3>
+                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-200'>{items.title}</h3>
                             <div className=" flex gap-x-2 justify-center py-2">
                                 <div className=" text-center">
                                     <div className="bg-[#05E6B7] h-[2px] w-4"></div>
