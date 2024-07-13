@@ -8,11 +8,14 @@ const ContextApi = ({children}) => {
     let getData = ()=>{
         axios.get(('https://dummyjson.com/products')).then((response)=>{
             Setitemss(response.data.products);
+
         })
     }
     useEffect(() => {
         getData()
     }, [])
+
+    
   return (
     <DataApi.Provider value={itemss}>
         {children}

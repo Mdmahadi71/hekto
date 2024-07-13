@@ -4,12 +4,10 @@ import Trean from '../assets/chayar.png'
 import Trends from '../assets/trabd2.png'
 import tracndd from '../assets/trend1.png'
 import Trendf from '../assets/trend3.png'
-import { DataApi } from './ContextApi'
 
 const Trending = () => {
 
-    let data = useContext(DataApi)
-    console.log(data);
+    
 
     return (
         <div>

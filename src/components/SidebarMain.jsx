@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
 import { FaList, FaRegHeart, FaCartPlus } from "react-icons/fa";
@@ -10,9 +10,35 @@ import newss from '../assets/Newsd.png'
 import { MdCheckBox } from "react-icons/md";
 import { IoStar } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
+import { DataApi } from './ContextApi';
+import Post from './Pagenation/Post';
+import PagenationArrea from './Pagenation/PagenationArrea';
 
 
 const SidebarMain = () => {
+    let data = useContext(DataApi)
+    let [pagenumber , setpagenumber] = useState(1)
+    let [parpage , setparpage] = useState(5)
+
+    let lastpage = pagenumber * parpage
+    let fastpage = lastpage - parpage
+    let Allpage = data.slice(fastpage , lastpage )
+
+
+    let pageNumber = []
+    for(let i = 0; i < Math.ceil(data.length / parpage); i++){
+        pageNumber.push(i)
+    }
+   let pageAreaNbr = ((pageNumber)=>{
+    setpagenumber(pageNumber + 1)
+   })
+   let nextPage =((pageNumber)=>{
+    setpagenumber((state)=>state + 1)
+   })
+   let prewPage = (()=>{
+    setpagenumber((state)=>state - 1)
+   })
+    
     return (
         <div>
             <Container>
@@ -244,179 +270,14 @@ const SidebarMain = () => {
                         </div>
                     </div>
                     <div className="w-[75%]">
-                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
-                                <div className="">
-                                    <img src={ShopList} alt="" />
-                                </div>
-                                <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
-                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>Accumsan tincidunt</h3>
-                                        <div className=" flex gap-x-[10px] ">
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                        </div>
-                                    </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>$26.00</h5>
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>$52.00</h5>
-                                        <div className=" flex gap-x-[10px]">
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline />
-                                        </div>
-                                    </div>
-                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <FaCartPlus />
-                                        <TbZoomIn />
-                                        <FaRegHeart />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
-                                <div className="">
-                                    <img src={ShopList} alt="" />
-                                </div>
-                                <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
-                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>Accumsan tincidunt</h3>
-                                        <div className=" flex gap-x-[10px] ">
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                        </div>
-                                    </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>$26.00</h5>
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>$52.00</h5>
-                                        <div className=" flex gap-x-[10px]">
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline />
-                                        </div>
-                                    </div>
-                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <FaCartPlus />
-                                        <TbZoomIn />
-                                        <FaRegHeart />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
-                                <div className="">
-                                    <img src={ShopList} alt="" />
-                                </div>
-                                <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
-                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>Accumsan tincidunt</h3>
-                                        <div className=" flex gap-x-[10px] ">
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                        </div>
-                                    </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>$26.00</h5>
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>$52.00</h5>
-                                        <div className=" flex gap-x-[10px]">
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline />
-                                        </div>
-                                    </div>
-                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <FaCartPlus />
-                                        <TbZoomIn />
-                                        <FaRegHeart />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
-                                <div className="">
-                                    <img src={ShopList} alt="" />
-                                </div>
-                                <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
-                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>Accumsan tincidunt</h3>
-                                        <div className=" flex gap-x-[10px] ">
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                        </div>
-                                    </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>$26.00</h5>
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>$52.00</h5>
-                                        <div className=" flex gap-x-[10px]">
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline />
-                                        </div>
-                                    </div>
-                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <FaCartPlus />
-                                        <TbZoomIn />
-                                        <FaRegHeart />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
-                                <div className="">
-                                    <img src={ShopList} alt="" />
-                                </div>
-                                <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
-                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>Accumsan tincidunt</h3>
-                                        <div className=" flex gap-x-[10px] ">
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                        </div>
-                                    </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>$26.00</h5>
-                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>$52.00</h5>
-                                        <div className=" flex gap-x-[10px]">
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline />
-                                        </div>
-                                    </div>
-                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                                    <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <FaCartPlus />
-                                        <TbZoomIn />
-                                        <FaRegHeart />
-                                    </div>
-                                </div>
-                            </div>
+                       <Post Allpage={Allpage}/>
+                        <div className=" text-end">
+                            <PagenationArrea pageNumber={pageNumber} prewPage={prewPage} nextPage={nextPage} pageAreaNbr={pageAreaNbr} />
                         </div>
                     </div>
+
                 </div>
-                
+
                 <div className=" pl-[200px] py-4">
                     <img src={newss} alt="" />
                 </div>

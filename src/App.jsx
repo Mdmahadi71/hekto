@@ -29,7 +29,7 @@ function App() {
        <Route path="/ShopGrid" element={<ShopGrid/>}> </Route>
        <Route path="/ShopList" element={<ShopList/>}> </Route>
        <Route path="/Shopsidebar" element={<Shopsidebar/>}> </Route>
-       <Route path="/ProductDetails" element={<ProductDetails/>}> </Route>
+       <Route path="/Shopsidebar/:Id" element={<ProductDetails/>}> </Route>
        <Route path="/Shopping" element={<Shopping/>}> </Route>
        <Route path="/OrderCompleted" element={<OrderCompleted/>}> </Route>
        <Route path="/DemoPage" element={<HektoDemopage/>}> </Route>

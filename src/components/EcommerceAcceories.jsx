@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
 import { FaList ,FaRegHeart,FaCartPlus  } from "react-icons/fa";
@@ -7,10 +7,14 @@ import { TbZoomIn } from "react-icons/tb";
 import gritlists from '../assets/gridlist1.png'
 import GridlistImgd from '../assets/gridlist3.png'
 import newss from '../assets/Newsd.png'
+import { DataApi } from './ContextApi';
 
 
 
 const EcommerceAcceories = () => {
+
+
+    let data = useContext(DataApi)
     return (
         <div>
             <Container>
@@ -41,8 +45,35 @@ const EcommerceAcceories = () => {
                         </div>
                     </div>
                 </div>
-                <div className=" flex justify-between">
-                    <div className="w-[24%]">
+                <div className=" flex flex-wrap">
+                {data.map((item)=>(
+                    <div className="w-[24%] flex flex-wrap">
+                        
+                            <div className=" group overflow-hidden">
+                            <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
+                                 <div className=" w-[90%] justify-center">
+                                   <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
+                                 </div>
+                                <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">              
+                                    <FaCartPlus className=' text-[40px] py-[10px]'/>
+                                    <TbZoomIn className=' text-[40px] py-[10px]'/>
+                                    <FaRegHeart className=' text-[40px] py-[10px]'/>
+                            </div>
+                            </div>
+                           
+                            <div className=" text-center py-[20px]">
+                                <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
+                                <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
+                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
+                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
+                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
+                                </div>
+                                <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                     ))}
+                    {/* <div className="w-[24%]">
                         <div className=" group overflow-hidden">
                             <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
                                 <img src={gritlists} className='translate-x-[39%] py-[40px]' alt="" />
@@ -107,31 +138,9 @@ const EcommerceAcceories = () => {
                                 <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>$26.00 </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>$42.00</span></h4>
                             </div>
                         </div>
-                    </div>
-                    <div className="w-[24%]">
-                        <div className=" group overflow-hidden">
-                            <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
-                                <img src={gritlists} className='translate-x-[39%] py-[40px]' alt="" />
-                                <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">              
-                                    <FaCartPlus className=' text-[40px] py-[10px]'/>
-                                    <TbZoomIn className=' text-[40px] py-[10px]'/>
-                                    <FaRegHeart className=' text-[40px] py-[10px]'/>
-                            </div>
-                            </div>
-                           
-                            <div className=" text-center py-[20px]">
-                                <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>Vel elit euismod</h3>
-                                <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
-                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                    <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                </div>
-                                <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>$26.00 </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>$42.00</span></h4>
-                            </div>
-                        </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className=" flex justify-between">
+                {/* <div className=" flex justify-between">
                     <div className="w-[24%]">
                         <div className=" group overflow-hidden">
                             <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
@@ -220,8 +229,8 @@ const EcommerceAcceories = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className=" flex justify-between">
+                </div> */}
+                {/* <div className=" flex justify-between">
                     <div className="w-[24%]">
                         <div className=" group overflow-hidden">
                             <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
@@ -310,7 +319,7 @@ const EcommerceAcceories = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className=" pl-[200px] py-4">
                     <img src={newss} alt="" />
                 </div>

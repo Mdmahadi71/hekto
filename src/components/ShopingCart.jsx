@@ -6,6 +6,8 @@ import { RxCrossCircled } from "react-icons/rx";
 import { FaCheckCircle } from "react-icons/fa";
 
 const ShopingCart = () => {
+
+    
   return (
     <div className=' py-[40px]'>
       <Container>
