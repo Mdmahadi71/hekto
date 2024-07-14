@@ -38,7 +38,7 @@ const ProductTocart = () => {
     let Reating = Array.from({length : 5},(elm , index)=>{
         let number = index + 0.5
         return(
-            product.rating > index + 1  ?<IoIosStar/> : product.rating > number  ? <IoMdStarHalf/> : <FaRegStar/>
+            product.rating > index + 1  ?<IoIosStar /> : product.rating > number  ? <IoMdStarHalf /> : <FaRegStar/>
         )
     })
 
@@ -97,7 +97,7 @@ const ProductTocart = () => {
 
                                         <h3 className=' font-hakto font-semibold text-[#0D134E] text-[35px]'>{product.title}</h3>
 
-                                        <div className=" flex gap-x-[10px] items-center">
+                                        <div className=" flex gap-x-[10px] items-center text-[#FFC416]">
                                           {Reating}
                                             <p>(22)</p>
                                         </div>

@@ -4,9 +4,11 @@ import CartImg from '../assets/cartpage.png'
 import { FaPlus ,FaMinus } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
 import { FaCheckCircle } from "react-icons/fa";
+import { useSelector } from 'react-redux';
 
 const ShopingCart = () => {
-
+    // let cartdata = useSelector((state) => state.product.cartItem)
+    // console.log(cartdata);
     
   return (
     <div className=' py-[40px]'>
