@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
 import { FaList, FaRegHeart, FaCartPlus } from "react-icons/fa";
@@ -19,6 +19,8 @@ const SidebarMain = () => {
     let data = useContext(DataApi)
     let [pagenumber , setpagenumber] = useState(1)
     let [parpage , setparpage] = useState(5)
+    let [cotagory,setcotagory] = useState([])
+    let [cotagoryFiter,setcotagoryFiter] = useState([])
 
     let lastpage = pagenumber * parpage
     let fastpage = lastpage - parpage
@@ -37,6 +39,15 @@ const SidebarMain = () => {
    })
    let prewPage = (()=>{
     setpagenumber((state)=>state - 1)
+   })
+
+   useEffect(()=>{
+    setcotagory([...new Set(data.map((item)=> item.category))])
+   },[data])
+
+   let handelcata = ((cItem)=>{
+     let Filtercate = data.filter((item)=> item.category == cItem)
+     setcotagoryFiter(Filtercate)
    })
     
     return (
@@ -176,18 +187,21 @@ const SidebarMain = () => {
 
 
                             </div>
-
+                            
+                                
+                            
                             <div className="">
+                                <div onClick={()=>handelcata()} className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Categories</h2>
+                                </div>
+                                {cotagory.map((item)=>(
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Prestashop</p>
+                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>{item}</p>
                                 </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Bigcommerce</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
+                              ))}
+                             
+                                {/* <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
                                     <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>osCommerce</p>
                                 </div>
@@ -202,9 +216,11 @@ const SidebarMain = () => {
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
                                     <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Watches</p>
-                                </div>
+                                </div> */}
 
                             </div>
+                              
+
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Price Filter</h2>
                                 <div className=" flex gap-x-[10px] items-center py-2">

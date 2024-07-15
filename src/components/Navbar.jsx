@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Container'
 import Hakto from '../assets/Hekto.png'
 import { CiSearch } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -14,12 +15,24 @@ const Navbar = () => {
             </div>
             <div className="w-[60%] mt-2">
                 <div className=" flex gap-x-[35px] ">
+                  <Link to = '/'>
                     <a className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Home</a>
-                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Pages</a>
-                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Products</a>
+                    </Link>
+                    <Link to = '/Faq'>
+                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Faq</a>
+                    </Link>
+                    <Link to = '/LoginPage'>
+                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>LoginPage</a>
+                    </Link>
+                    <Link to = '/BlogPage'>
                     <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Blog </a>
+                    </Link>
+                    <Link to = '/Shopsidebar'>
                     <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Shop</a>
+                    </Link>
+                    <Link to = '/ContactUs'>
                     <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Contact</a>
+                    </Link>
                 </div>
             </div>
             <div className="w-[17%] justify-end">

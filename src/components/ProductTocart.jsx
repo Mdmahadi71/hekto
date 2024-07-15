@@ -13,7 +13,7 @@ import { IoIosStar } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa6";
 import { IoMdStarHalf } from "react-icons/io";
 import { useDispatch } from 'react-redux';
-import { AddtoCart } from './Slice/productSlice';
+import { addtoCart } from './Slice/productSlice';
 
 
 const ProductTocart = () => {
@@ -43,8 +43,9 @@ const ProductTocart = () => {
     })
 
     let handelcart = ((item)=>{
-        dispacth(AddtoCart({...item , qun:1}))
+        dispacth(addtoCart({...item , qun:1}))
     })
+
 
     return (
         <>
