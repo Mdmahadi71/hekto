@@ -62,20 +62,22 @@ const Featured = () => {
        
         <Slider {...settings}>
             {data.map((items)=>(
-                <div className="flex w-[25%]" >
+                <div className="flex w-[23%] gap-x-[10px]" >
                 <div className="bg-[#F6F7FB] shadow-xl">
                     <div className=" relative  group overflow-hidden">
                         <div className=" bg-[#F6F7FB] relative  group overflow-hidden p-[20px]">
-                            <img src={items.thumbnail} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
+                            <div className=" p-[15%]">
+                               <img src={items.thumbnail} className=' w-full h-[100%]' alt="" />
+                            </div>
+                            <div className=" absolute top-[-20px] px-[28%] group-hover:top-[30px] duration-300">
                                <div className=" flex gap-x-[20px] text-center">
                                <FaCartArrowDown/>
                                 <FaRegHeart />
                                 <MdOutlineZoomIn/>
                                </div>
                             </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
+                            <button className='absolute bottom-[-200px] px-[25%] group-hover:bottom-[4px] duration-300'>
+                                <div className="border-[1px] py-[10px] px-[15px] bg-[#08D15F] rounded-[3px] text-center">
                                     <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
                                     </div>
                             </button>
@@ -100,199 +102,6 @@ const Featured = () => {
                 </div>
             </div>
             ))}
-            {/* <div className="flex w-[25%]" >
-                <div className="bg-[#F6F7FB] shadow-xl">
-                    <div className=" relative  group overflow-hidden">
-                        <div className=" bg-[#F6F7FB] relative  group overflow-hidden p-[20px]">
-                            <img src={feature} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
-                               <div className=" flex gap-x-[20px] text-center">
-                               <FaCartArrowDown/>
-                                <FaRegHeart />
-                                <MdOutlineZoomIn/>
-                               </div>
-                            </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
-                                    <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
-                                    </div>
-                            </button>
-                        </div>
-                        <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-200 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-200'>Cantilever chair</h3>
-                            <div className=" flex gap-x-2 justify-center py-2">
-                                <div className=" text-center">
-                                    <div className="bg-[#05E6B7] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#FB2E86] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#00009D] h-[2px] w-4"></div>
-                                </div>
-                            </div>
-                            <h4 className=' font-hakto font-normal text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>Code - Y523201</h4>
-                            <p className=' font-hakto font-medium text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>$42.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex w-[20%]">
-                <div className="bg-[#F6F7FB] shadow-xl">
-                    <div className=" relative  group overflow-hidden">
-                        <div className=" bg-[#F6F7FB]  relative  group overflow-hidden p-[20px]">
-                            <img src={feature} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
-                               <div className=" flex gap-x-[20px] text-center">
-                               <FaCartArrowDown/>
-                                <FaRegHeart />
-                                <MdOutlineZoomIn/>
-                               </div>
-                            </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
-                                    <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
-                                    </div>
-                            </button>
-                        </div>
-                        <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-200 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-200'>Cantilever chair</h3>
-                            <div className=" flex gap-x-2 justify-center py-2">
-                                <div className=" text-center">
-                                    <div className="bg-[#05E6B7] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#FB2E86] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#00009D] h-[2px] w-4"></div>
-                                </div>
-                            </div>
-                            <h4 className=' font-hakto font-normal text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>Code - Y523201</h4>
-                            <p className=' font-hakto font-medium text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>$42.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="flex w-[20%]">
-                <div className=" bg-[#F6F7FB] shadow-xl">
-                    <div className=" relative  group overflow-hidden">
-                        <div className=" bg-[#F6F7FB] relative  group overflow-hidden p-[20px]">
-                            <img src={feature} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
-                               <div className=" flex gap-x-[20px] text-center">
-                               <FaCartArrowDown/>
-                                <FaRegHeart />
-                                <MdOutlineZoomIn/>
-                               </div>
-                            </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
-                                    <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
-                                    </div>
-                            </button>
-                        </div>
-                        <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-200 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-200'>Cantilever chair</h3>
-                            <div className=" flex gap-x-2 justify-center py-2">
-                                <div className=" text-center">
-                                    <div className="bg-[#05E6B7] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#FB2E86] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#00009D] h-[2px] w-4"></div>
-                                </div>
-                            </div>
-                            <h4 className=' font-hakto font-normal text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>Code - Y523201</h4>
-                            <p className=' font-hakto font-medium text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-200'>$42.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="flex w-[20%]">
-                <div className=" bg-[#F6F7FB] shadow-xl">
-                    <div className=" relative  group overflow-hidden">
-                        <div className=" bg-[#F6F7FB]  relative  group overflow-hidden p-[20px]">
-                            <img src={feature} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
-                               <div className=" flex gap-x-[20px] text-center">
-                               <FaCartArrowDown/>
-                                <FaRegHeart />
-                                <MdOutlineZoomIn/>
-                               </div>
-                            </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
-                                    <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
-                                    </div>
-                            </button>
-                        </div>
-                        <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-300 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-300'>Cantilever chair</h3>
-                            <div className=" flex gap-x-2 justify-center py-2">
-                                <div className=" text-center">
-                                    <div className="bg-[#05E6B7] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#FB2E86] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#00009D] h-[2px] w-4"></div>
-                                </div>
-                            </div>
-                            <h4 className=' font-hakto font-normal text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-300'>Code - Y523201</h4>
-                            <p className=' font-hakto font-medium text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-300'>$42.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="flex w-[20%]">
-                <div className=" bg-[#F6F7FB] shadow-xl">
-                    <div className=" relative  group overflow-hidden">
-                        <div className=" bg-[#F6F7FB]  relative  group overflow-hidden p-[20px]">
-                            <img src={feature} className=' translate-x-[8%]' alt="" />
-                            <div className=" absolute top-[-20px] left-[80px] group-hover:top-[10px] duration-300">
-                               <div className=" flex gap-x-[20px] text-center">
-                               <FaCartArrowDown/>
-                                <FaRegHeart />
-                                <MdOutlineZoomIn/>
-                               </div>
-                            </div>
-                            <button className='absolute bottom-[-200px] left-[65px]  group-hover:bottom-[4px] duration-300'>
-                                <div className="border-[1px] border-[#000000] py-[10px] px-[15px] bg-[#08D15F] text-center">
-                                    <h3 className=' font-hakto font-medium text-[16px] text-[#ffffff]'>View Details</h3>
-                                    </div>
-                            </button>
-                        </div>
-                        <div className=" text-center bg-[#0e07070c] py-[20px] group-hover:bg-[#2F1AC4] group-hover:text-[#FFFFFF]  duration-300 ">
-                            <h3 className=' font-hakto font-medium text-[18px] text-[#FB2E86] hover:text-[#FFFFFF] duration-300'>Cantilever chair</h3>
-                            <div className=" flex gap-x-2 justify-center py-2">
-                                <div className=" text-center">
-                                    <div className="bg-[#05E6B7] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#FB2E86] h-[2px] w-4"></div>
-                                </div>
-                                <div className=" text-center">
-                                    <div className="bg-[#00009D] h-[2px] w-4"></div>
-                                </div>
-                            </div>
-                            <h4 className=' font-hakto font-normal text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-300'>Code - Y523201</h4>
-                            <p className=' font-hakto font-medium text-[14px] text-[#151875] group-hover:text-[#FFFFFF] duration-300'>$42.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
         </Slider>
 
 

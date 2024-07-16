@@ -52,17 +52,21 @@ const Cate = () => {
          </div>
          
          <Slider {...settings}>
-            <div className="w-[24%]">
+
+
+            <div className="w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#F6F7FB] w-[290px] h-[290px] rounded-[50%] relative">
-                        <div className=" absolute top-[25%] right-[25%]">
-                          <img src={catess} className=' top-0 right-0' alt="" />
+                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                      <div className=" absolute p-[30%]">
+                          <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
-                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block
+                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block rounded-[10px]
                          absolute bottom-[-200px] left-[85px] group-hover:bottom-[15px] duration-300 ">
                             <a className=' font-hakto font-medium text-[16px] text-[#FFFFFF]'>View Shop</a>
                         </button>
-                        
+                      </div>
+                      
                     </div> 
                     <div className=" text-center py-[20px]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[20px]'>Mini LCW Chair</h4>
@@ -70,17 +74,19 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
-                <div className="  relative group overflow-hidden ">
-                    <div className=" bg-[#F6F7FB]  w-[290px] h-[290px] rounded-[50%] relative">
-                        <div className=" absolute top-[25%] right-[25%]">
-                          <img src={catess} className=' top-0 right-0' alt="" />
+            <div className="w-[24%] ">
+                <div className="relative group overflow-hidden ">
+                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                      <div className=" absolute p-[30%]">
+                          <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
-                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block
+                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block rounded-[10px]
                          absolute bottom-[-200px] left-[85px] group-hover:bottom-[15px] duration-300 ">
                             <a className=' font-hakto font-medium text-[16px] text-[#FFFFFF]'>View Shop</a>
                         </button>
-                        
+                      </div>
+                      
                     </div> 
                     <div className=" text-center py-[20px]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[20px]'>Mini LCW Chair</h4>
@@ -88,17 +94,19 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
-                <div className=" relative group overflow-hidden ">
-                    <div className=" bg-[#F6F7FB]  w-[290px] h-[290px] rounded-[50%]  relative">
-                        <div className=" absolute top-[25%] right-[25%]">
-                          <img src={catess} className=' top-0 right-0' alt="" />
+            <div className="w-[24%] ">
+                <div className="relative group overflow-hidden ">
+                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                      <div className=" absolute p-[30%]">
+                          <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
-                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block
+                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block rounded-[10px]
                          absolute bottom-[-200px] left-[85px] group-hover:bottom-[15px] duration-300 ">
                             <a className=' font-hakto font-medium text-[16px] text-[#FFFFFF]'>View Shop</a>
                         </button>
-                        
+                      </div>
+                      
                     </div> 
                     <div className=" text-center py-[20px]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[20px]'>Mini LCW Chair</h4>
@@ -106,17 +114,19 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
-                <div className="  relative group overflow-hidden ">
-                    <div className=" bg-[#F6F7FB]  w-[290px] h-[290px] rounded-[50%]  relative">
-                        <div className=" absolute top-[25%] right-[25%]">
-                          <img src={catess} className=' top-0 right-0' alt="" />
+            <div className="w-[24%] ">
+                <div className="relative group overflow-hidden ">
+                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                      <div className=" absolute p-[30%]">
+                          <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
-                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block
+                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block rounded-[10px]
                          absolute bottom-[-200px] left-[85px] group-hover:bottom-[15px] duration-300 ">
                             <a className=' font-hakto font-medium text-[16px] text-[#FFFFFF]'>View Shop</a>
                         </button>
-                        
+                      </div>
+                      
                     </div> 
                     <div className=" text-center py-[20px]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[20px]'>Mini LCW Chair</h4>
@@ -124,17 +134,19 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
-                <div className="  relative group overflow-hidden ">
-                    <div className=" bg-[#F6F7FB]  w-[290px] h-[290px] rounded-[50%]  relative">
-                        <div className=" absolute top-[25%] right-[25%]">
-                          <img src={catess} className=' top-0 right-0' alt="" />
+            <div className="w-[24%] ">
+                <div className="relative group overflow-hidden ">
+                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                      <div className=" absolute p-[30%]">
+                          <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
-                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block
+                        <button className=" border-[1px] border-[#08D15F] bg-[#08D15F] px-[15px] py-[10px] inline-block rounded-[10px]
                          absolute bottom-[-200px] left-[85px] group-hover:bottom-[15px] duration-300 ">
                             <a className=' font-hakto font-medium text-[16px] text-[#FFFFFF]'>View Shop</a>
                         </button>
-                        
+                      </div>
+                      
                     </div> 
                     <div className=" text-center py-[20px]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[20px]'>Mini LCW Chair</h4>
@@ -142,6 +154,7 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
+
             </Slider>
    
       </Container>

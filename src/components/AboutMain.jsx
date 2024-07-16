@@ -3,15 +3,32 @@ import Container from './Container'
 import AboutImg from '../assets/aboutmain.png'
 import Whats from '../assets/Whats.png'
 import sayImg from '../assets/Say.png'
+import { Link } from 'react-router-dom'
 
 const AboutMain = () => {
   return (
     <>
+      <div className=' bg-[#F6F5FF] py-[90px]'>
+        <Container>
+          <div className="">
+            <h2 className=' font-hakto font-semibold text-[#101750] text-[35px]'>About Us</h2>
+            <h2><Link to='/'><span className=' font-hakto font-medium text-[16px] text-[#101750]  hover:text-[#FB2E86] duration-300'>Home.Pages</span>
+            </Link> <Link to='/About'><span className=' font-hakto font-medium text-[16px] text-[#101750]  hover:text-[#FB2E86] duration-300'>About Us</span></Link></h2>
+
+          </div>
+        </Container>
+      </div>
+
+
       <div className=' py-[50px]'>
         <Container>
           <div className=" flex justify-between items-center">
             <div className="w-[50%]">
-              <img src={AboutImg} alt="" />
+              <div className="bg-[#2B3CAB] w-[555px] h-[390px] rounded-[7px] relative group">
+                <div className=" w-[555px] h-[390px] absolute group-hover:top-[-20px] group-hover:right-[-20px] duration-300">
+                <img src={AboutImg} alt="" />
+                </div>
+              </div>
             </div>
             <div className="w-[50%]">
               <div className=" py-[30px]">
@@ -28,6 +45,8 @@ const AboutMain = () => {
           </div>
         </Container>
       </div>
+
+
       <div className="">
         <Container>
           <div className=" py-[10px] text-center">
@@ -86,8 +105,6 @@ const AboutMain = () => {
         </Container>
       </div>
 
-
-
       <div className=" bg-[#FBFBFF] py-[50px]">
         <Container>
           <div className="">
@@ -104,11 +121,11 @@ const AboutMain = () => {
               </div>
             </div>
             <div className=" text-center w-[50%] mx-auto">
-                <h4 className=' font-hakto font-medium text-[#151875] text-[22px]'>Selina Gomez</h4> 
-                <p className=' font-hakto font-light text-[#8A8FB9] text-[10px] '>Ceo At Webecy Digital</p>
+              <h4 className=' font-hakto font-medium text-[#151875] text-[22px]'>Selina Gomez</h4>
+              <p className=' font-hakto font-light text-[#8A8FB9] text-[10px] '>Ceo At Webecy Digital</p>
 
-                <h3 className=' font-hakto font-normal text-[16px] text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel 
-                  dui sollicitudin aliquet id arcu. Nam vitae a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam lacus volutpat praesent.</h3>
+              <h3 className=' font-hakto font-normal text-[16px] text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel
+                dui sollicitudin aliquet id arcu. Nam vitae a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam lacus volutpat praesent.</h3>
             </div>
           </div>
         </Container>
