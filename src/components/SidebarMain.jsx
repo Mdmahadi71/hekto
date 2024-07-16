@@ -20,7 +20,9 @@ const SidebarMain = () => {
     let [pagenumber , setpagenumber] = useState(1)
     let [parpage , setparpage] = useState(5)
     let [cotagory,setcotagory] = useState([])
+    let [brands,setbrands] = useState([])
     let [cotagoryFiter,setcotagoryFiter] = useState([])
+    let [Multi , setMulti] = useState('')
 
     let lastpage = pagenumber * parpage
     let fastpage = lastpage - parpage
@@ -28,7 +30,7 @@ const SidebarMain = () => {
 
 
     let pageNumber = []
-    for(let i = 0; i < Math.ceil(data.length / parpage); i++){
+    for(let i = 0; i < Math.ceil(cotagoryFiter.length > 0 ? cotagoryFiter : data.length / parpage); i++){
         pageNumber.push(i)
     }
    let pageAreaNbr = ((pageNumber)=>{
@@ -43,13 +45,17 @@ const SidebarMain = () => {
 
    useEffect(()=>{
     setcotagory([...new Set(data.map((item)=> item.category))])
+    setbrands([...new Set(data.map((item)=> item.brand))])
    },[data])
 
    let handelcata = ((cItem)=>{
      let Filtercate = data.filter((item)=> item.category == cItem)
      setcotagoryFiter(Filtercate)
    })
-    
+    let handelGrid = () =>{
+        setMulti('ActiveMulti')
+    }
+   
     return (
         <div>
             <Container>
@@ -72,8 +78,13 @@ const SidebarMain = () => {
                             <div className="flex gap-x-[10px] items-center">
                                 <div className=" flex gap-x-[10px] items-center">
                                     <h3 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>View:</h3>
-                                    <IoGridSharp />
-                                    <FaList />
+                                    <div onClick={()=>setMulti("")} className="">
+                                      <FaList />
+                                    </div>
+                                    <div onClick={handelGrid} className="">
+                                      <IoGridSharp />
+                                    </div>
+                                    
                                 </div>
                                 <input type="text" className=' border-[1px] border-[#E7E6EF] w-[200px] h-[40px] outline-none ' />
                             </div>
@@ -85,30 +96,12 @@ const SidebarMain = () => {
                         <div className="">
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Product Brand</h2>
-                                <div className=" flex gap-x-[10px] items-center py-2">
+                                {brands.map((item)=>(
+                                    <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Coaster Furniture</p>
+                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>{item}</p>
                                 </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Fusion Dot High Fashion</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Unique Furnitture Restor</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Dream Furnitture Flipping</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Young Repurposed</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#E5E0FC]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Green DIY furniture</p>
-                                </div>
+                                ))}
                             </div>
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Discount Offer</h2>
@@ -129,6 +122,7 @@ const SidebarMain = () => {
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Rating Item</h2>
                                 <div className=" flex gap-x-[10px] items-center py-2">
+                                 
                                     <div className="">
                                         <MdCheckBox className=' text-[#FFC107]' />
                                     </div>
@@ -191,32 +185,16 @@ const SidebarMain = () => {
                                 
                             
                             <div className="">
-                                <div onClick={()=>handelcata()} className="">
+                                <div  className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Categories</h2>
                                 </div>
                                 {cotagory.map((item)=>(
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>{item}</p>
+                                    <p onClick={()=>handelcata(item)} className=' font-hakto font-light text-[16px] text-[#7E81A2]'>{item}</p>
                                 </div>
                               ))}
                              
-                                {/* <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>osCommerce</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Accessories</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Bags</p>
-                                </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>Watches</p>
-                                </div> */}
 
                             </div>
                               
@@ -286,7 +264,7 @@ const SidebarMain = () => {
                         </div>
                     </div>
                     <div className="w-[75%]">
-                       <Post Allpage={Allpage}/>
+                       <Post Allpage={Allpage} cotagoryFiter={cotagoryFiter} Multi={Multi}/>
                         <div className=" text-end">
                             <PagenationArrea pageNumber={pageNumber} prewPage={prewPage} nextPage={nextPage} pageAreaNbr={pageAreaNbr} />
                         </div>

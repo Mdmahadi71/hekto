@@ -21,8 +21,8 @@ const Navbar = () => {
                     <Link to = '/Faq'>
                     <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Faq</a>
                     </Link>
-                    <Link to = '/LoginPage'>
-                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>LoginPage</a>
+                    <Link to = '/ShopGrid'>
+                    <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Shop Grid</a>
                     </Link>
                     <Link to = '/BlogPage'>
                     <a  className=' font-hakto font-medium text-[16px] text-[#0D0E43] hover:text-[#FB2E86] duration-200'>Blog </a>
