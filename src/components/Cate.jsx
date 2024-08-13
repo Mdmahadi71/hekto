@@ -15,6 +15,33 @@ const Cate = () => {
         speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 1,
+        responsive: [
+          {
+              breakpoint: 1024,
+              settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+              }
+          },
+          {
+              breakpoint: 600,
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  initialSlide: 1
+              }
+          },
+          {
+              breakpoint: 480,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+              }
+          }
+      ],
+    
+
         appendDots: dots => (
             <div
               style={{
@@ -54,10 +81,10 @@ const Cate = () => {
          <Slider {...settings}>
 
 
-            <div className="w-[24%] ">
+            <div className="lg:w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
-                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                    <div className=" bg-[#31208A] w-[250px] h-[250px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[250px] h-[250px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
                       <div className=" absolute p-[30%]">
                           <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
@@ -74,10 +101,10 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%] ">
+            <div className="lg:w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
-                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                    <div className=" bg-[#31208A]  w-[250px] h-[250px]  rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[250px] h-[250px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
                       <div className=" absolute p-[30%]">
                           <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
@@ -94,10 +121,10 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%] ">
+            <div className="lg:w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
-                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                    <div className=" bg-[#31208A] w-[250px] h-[250px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[250px] h-[250px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
                       <div className=" absolute p-[30%]">
                           <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
@@ -114,10 +141,10 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%] ">
+            <div className="lg:w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
-                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                    <div className=" bg-[#31208A] w-[250px] h-[250px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[250px] h-[250px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
                       <div className=" absolute p-[30%]">
                           <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>
@@ -134,10 +161,10 @@ const Cate = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%] ">
+            <div className="lg:w-[24%] ">
                 <div className="relative group overflow-hidden ">
-                    <div className=" bg-[#31208A] w-[269px] h-[269px] rounded-[50%] group relative ">
-                      <div className="bg-[#F6F7FB] w-[269px] h-[269px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
+                    <div className=" bg-[#31208A] w-[250px] h-[250px] rounded-[50%] group relative ">
+                      <div className="bg-[#F6F7FB] w-[250px] h-[250px] rounded-[50%] absolute group-hover:top-[-5px] group-hover:right-[-5px] duration-300">
                       <div className=" absolute p-[30%]">
                           <img src={catess} className=' w-full h-[100%]' alt="" />
                         </div>

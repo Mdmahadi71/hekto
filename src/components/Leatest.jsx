@@ -33,8 +33,8 @@ const Leatest = () => {
                     </div>
                 </div>
                 <div className=" " id="tabs-example" role="presentation" aria-controls="contacts-example">
-              <div className=" flex justify-between " >
-                  <div className="w-[32%] ">
+              <div className=" lg:flex justify-between " >
+                  <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">
@@ -55,7 +55,7 @@ const Leatest = () => {
                           </div>
                       </div>
                   </div>
-                  <div className="w-[32%] ">
+                  <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">
@@ -76,7 +76,7 @@ const Leatest = () => {
                           </div>
                       </div>
                   </div>
-                  <div className="w-[32%] ">
+                  <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">
@@ -100,8 +100,8 @@ const Leatest = () => {
               
                 
               </div>
-              <div className=" flex justify-between mt-[20px]">
-              <div className="w-[32%] ">
+              <div className=" lg:flex justify-between mt-[20px]">
+              <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">
@@ -122,7 +122,7 @@ const Leatest = () => {
                           </div>
                       </div>
                   </div>
-                  <div className="w-[32%] ">
+                  <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">
@@ -143,7 +143,7 @@ const Leatest = () => {
                           </div>
                       </div>
                   </div>
-                  <div className="w-[32%] ">
+                  <div className="lg:w-[32%] ">
                       <div className=" mt-4">
                           <div className=" bg-[#F7F7F7] relative group overflow-hidden ">
                               <div className=" p-[15%]">

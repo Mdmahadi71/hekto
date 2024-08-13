@@ -21,6 +21,9 @@ const ShopingCart = () => {
     let hemdelremove = ((item) => {
         dispacth(productremove(item))
     })
+    let hemdelremoveall = (()=>{
+        dispacth(productremove(cartdata))
+    })
 
     const {totalPrice, totatQuntity} = cartdata.reduce((acc , item)=>{
         acc.totalPrice += item.price * item.qun
@@ -89,17 +92,20 @@ const ShopingCart = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                         ))}
 
-
-                        <div className=" flex justify-between py-[30px]">
+   
+                            <div className=" flex justify-between py-[30px]">
                             <button className=' border-[1px]  bg-[#FB2E86] px-4 py-3 rounded-[5px] text-white hover:bg-[#19D16F] duration-300'>
                                 <a className=' font-hakto font-medium text-[16px]'>Update Curt</a>
                             </button>
-                            <button className=' border-[1px]  bg-[#FB2E86] px-4 py-3 rounded-[5px] text-white hover:bg-[#19D16F] duration-300'>
-                                <a className=' font-hakto font-medium text-[16px]'>Clear Curt</a>
+                            <button onClick={() => hemdelremoveall()}  className=' border-[1px]  bg-[#FB2E86] px-4 py-3 rounded-[5px] text-white hover:bg-[#19D16F] duration-300'>
+                                <a  className=' font-hakto font-medium text-[16px]'>Clear Curt</a>
                             </button>
                         </div>
+
+                        
                     </div>
                     <div className="w-[28%]">
                         <div className=" text-center">

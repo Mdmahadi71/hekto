@@ -116,8 +116,9 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
 
                 :
                 <div className={`${Multi == "ActiveMulti" ?
-                    "flex"
-                    // (<div className=" flex flex-wrap">
+                    
+                   "flex"
+                    // <div className=" flex flex-wrap">
                     //     {Allpage.map((item)=>(
                     //         <div className="w-[24%] flex flex-wrap">
 
@@ -145,14 +146,13 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                     //             </div>
                     //         </div>
                     //          ))}
-                    //      </div>)
+                    //      </div>
                     :
 
 
                     ""}`}>
                     {Allpage.map((item) => (
                         <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-
                             <div className=" flex gap-x-[40px] items-center">
                                 <Link to={`/Shopsidebar/${item.id}`}>
                                     <div className="">

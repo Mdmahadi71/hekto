@@ -6,13 +6,13 @@ const Unique = () => {
   return (
     <div>
       <Container>
-        <div className=" flex justify-between items-center">
-            <div className="w-[50%]">
+        <div className=" lg:flex justify-between items-center">
+            <div className="lg:w-[50%]">
                 <div className="">
                     <img src={Uniquet} alt="" />
                 </div>
             </div>
-            <div className="w-[50%]">
+            <div className="lg:w-[50%]">
                 <div className="">
                     <h2 className=' font-hakto font-semibold text-[35px] text-[#151875]'>Unique Features Of leatest &
                     Trending Poducts</h2>

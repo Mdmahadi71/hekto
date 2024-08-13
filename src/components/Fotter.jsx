@@ -7,10 +7,10 @@ const Fotter = () => {
   return (
     <div className=' py-[100px] bg-[#EEEFFB]'>
       <Container>
-        <div className=" flex">
-            <div className="w-[35%]">
+        <div className=" lg:flex">
+            <div className="lg:w-[35%]">
                 <div className="">
-                    <img src={fotter} alt="" />
+                    <img src={fotter} className='' alt="" />
                     <div className=" py-[30px]">
                         <input type="text" placeholder='Enter Email Address' className=' border-[1px] border-white w-[250px] h-[50px]
                          bg-[#FFFFFF] font-hakto font-medium text-[16px] text-[#8A8FB9] pl-[10px] outline-none' />
@@ -22,7 +22,7 @@ const Fotter = () => {
                     <p  className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'>17 Princess Road, London, Greater London NW1 8JR, UK</p>
                 </div>
             </div>
-            <div className="w-[65%]">
+            <div className="lg:w-[65%]">
               <div className=" flex justify-between">
                 <div className="">
                   <ul className=' '>
@@ -69,6 +69,8 @@ const Fotter = () => {
               <FaTwitter />
           </div>
         </div>
+
+
       </Container>
     </div>
   )

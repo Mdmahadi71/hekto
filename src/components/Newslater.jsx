@@ -13,7 +13,7 @@ const Newslater = () => {
             <a className=' font-hakto font-medium text-[16px]'>Shop Now</a>
           </button>
         </div>
-        <div className=" pl-[200px] py-4">
+        <div className=" lg:pl-[200px] w-full py-4">
             <img src={newss}  alt="" />
         </div>
       </Container>

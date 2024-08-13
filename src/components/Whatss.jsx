@@ -9,8 +9,8 @@ const Whatss = () => {
             <div className="">
                 <h2 className=' font-hakto font-semibold text-[#151875] text-[42px] text-center py-[20px]'>What Shopex Offer!</h2>
             </div>
-         <div className=" flex gap-x-1">
-            <div className="w-[24%]">
+         <div className=" lg:flex lg:gap-x-1">
+            <div className="lg:w-[24%]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
@@ -22,7 +22,7 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
+            <div className="lg:w-[24%]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
@@ -34,7 +34,7 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
+            <div className="lg:w-[24%]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />
@@ -46,7 +46,7 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[24%]">
+            <div className="lg:w-[24%]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
                     <div className=" translate-x-[40%] py-[30px]">
                     <img src={Whats} alt="" />

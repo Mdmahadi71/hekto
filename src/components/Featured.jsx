@@ -15,44 +15,71 @@ const Featured = () => {
      let data = useContext(DataApi)
     
  
-   
+     const settings = {
+      dots: true,
+      infinite: true,
+      arrows:false,
+      autoplay:true,
+      speed: 3000,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ],
+  
+    appendDots: dots => (
+      <div
+        style={{
 
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        arrows:false,
-        autoplay:true,
-        speed: 1000,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        appendDots: dots => (
-            <div
-              style={{
+          borderRadius: "10px",
+          paddingTop: "0px",
+          marginTop:"0px"
+        }}
+      >
+        <ul style={{ marginTop: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div
+        style={{
+          color: "transparent",
+          height:"4px",
+          redius:"10px",
+          width:"20px",
+          background:"#FEBAD7",
+          borderRadius:"30px",
+        }}
+      >
+        {i + 1}
+      </div>
+    )
       
-                borderRadius: "10px",
-                padding: "-10px",
-                marginTop:"100px"
-              }}
-            >
-              <ul style={{ margin: "-10px" }}> {dots} </ul>
-            </div>
-          ),
-          customPaging: i => (
-            <div
-              style={{
-                color: "transparent",
-                height:"4px",
-                redius:"10px",
-                width:"20px",
-                background:"#FEBAD7",
-                borderRadius:"10px",
-              }}
-            >
-              {i + 1}
-            </div>
-          )
-      };
+    };
+
+
+      
   return (
     <div className=' py-[60px]'>
       <Container>

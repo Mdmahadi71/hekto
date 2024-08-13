@@ -11,8 +11,8 @@ const Lblog = () => {
                 <div className="py-[30px]">
                     <h3 className=' font-hakto font-semibold text-[35px] text-[#151875] text-center'>Leatest Blog</h3>
                 </div>
-                <div className=" flex justify-between">
-                    <div className="w-[32%]">
+                <div className=" lg:flex justify-between">
+                    <div className="lg:w-[32%] py-2">
                         <div className=" px-4 group shadow-xl rounded-[10px] ">
                             <img src={blog} alt="" />
                             <div className=" flex gap-x-[30px]">
@@ -36,7 +36,7 @@ const Lblog = () => {
                         </div>
 
                     </div>
-                    <div className="w-[32%]">
+                    <div className="lg:w-[32%] py-2">
                         <div className=" px-4 group shadow-xl rounded-[10px]">
                             <img src={blog} alt="" />
                             <div className=" flex gap-x-[30px]">
@@ -60,7 +60,7 @@ const Lblog = () => {
                         </div>
 
                     </div>
-                    <div className="w-[32%]">
+                    <div className="lg:w-[32%] py-2">
                         <div className=" px-4 group shadow-xl rounded-[10px]">
                             <img src={blog} alt="" />
                             <div className=" flex gap-x-[30px]">

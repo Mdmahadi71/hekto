@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiMail } from "react-icons/ci";
 import Container from './Container'
 import { FaPhoneAlt, FaRegHeart, FaCartArrowDown } from "react-icons/fa";
@@ -6,19 +6,20 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { FcManager } from "react-icons/fc";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FaBars } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
 
 const Menu = () => {
 
     let data = useSelector((state)=>state.product.cartItem)
 
-
     return (
         <div className=' py-[15px] bg-[#7E33E0]'>
             <Container>
-                <div className=" flex justify-between ">
-                    <div className=" w-[50%]">
-                        <div className=" flex gap-x-[50px] items-center">
-                            <div className=" flex gap-x-3 items-center font-hakto font-normal text-[#F1F1F1] text-[16px]">
+                <div className={` lg:flex lg:justify-between`}>
+                    <div className=" lg:w-[50%]">
+                        <div className=" lg:flex gap-x-[50px] items-center">
+                            <div className=" flex gap-x-3 items-center lg:justify-start justify-center font-hakto font-normal text-[#F1F1F1] text-[16px] lg:my-0 my-3">
                                 <div className="">
                                     <CiMail />
                                 </div>
@@ -26,7 +27,7 @@ const Menu = () => {
                                     <h2>habibalmasud79@gmail.com</h2>
                                 </div>
                             </div>
-                            <div className="flex gap-x-3 items-center font-hakto font-normal text-[#F1F1F1] text-[16px]">
+                            <div className="flex gap-x-3 items-center lg:justify-start justify-center font-hakto font-normal text-[#F1F1F1] text-[16px] lg:my-0 my-3">
                                 <div className="">
                                     <FaPhoneAlt />
                                 </div>
@@ -36,22 +37,22 @@ const Menu = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=" w-[50%]">
+                    <div className=" lg:w-[50%]">
                         <div className=" flex justify-end gap-x-6">
-                            <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px]  items-center">
+                            <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px]  items-center lg:my-0 my-4">
                                 <h2>English</h2>
                                 <RiArrowDropDownLine />
                             </div>
-                            <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center ">
+                            <div className=" flex lg:gap-x-2 gap-x-1 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4">
                                 <h2>USD</h2>
                                 <RiArrowDropDownLine />
                             </div>
-                            <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center">
+                            <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4">
                                 <h2>Login</h2>
                                 <FcManager />
                             </div>
                             <Link to= '/Shopping'>
-                            <div className=" relative cursor-pointer flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center" >
+                            <div className=" relative cursor-pointer flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4" >
                                     {data.length ? (<div className=" absolute top-[-15px] text-center lg:h-[20px] h-[15px] 
                                         lg:w-[20px] w-[15px] bg-[#F5F5F3] leading-[20px] lg:right-[-9px] ">
                                         <h2 className=' font-dm text-[14px] text-[#262626]'>{data.length}</h2>
@@ -61,7 +62,7 @@ const Menu = () => {
                                 </div>
                                 </Link>
                                 <Link to= '/Shopping'>
-                                <div className=" relative cursor-pointer flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center" >
+                                <div className=" relative cursor-pointer flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4" >
                                     {data.length ? (<div className=" absolute top-[-15px] text-center lg:h-[20px] h-[15px] 
                                         lg:w-[20px] w-[15px] bg-[#F5F5F3] leading-[20px] lg:right-[-9px] ">
                                         <h2 className=' font-dm text-[14px] text-[#262626]'>{data.length}</h2>
