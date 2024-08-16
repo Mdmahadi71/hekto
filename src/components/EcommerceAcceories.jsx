@@ -28,14 +28,15 @@ const EcommerceAcceories = () => {
                 </Container>
             </div>
             <Container>
-                <div className=" flex justify-between items-center py-[30px]">
-                    <div className="w-[50%]">
+                <div className=" lg:flex justify-between items-center py-[30px]">
+                    <div className="lg:w-[50%]">
                         <h4 className=' font-hakto font-semibold text-[#151875] text-[22px]'>Ecommerce Acceories & Fashion item </h4>
                         <p className=' font-hakto font-normal text-[#8A8FB9] text-[12px]'>About 9,620 results (0.62 seconds)</p>
                     </div>
-                    <div className="w-[50%]">
-                        <div className=" flex justify-between">
-                            <div className=" flex gap-x-[10px] items-center">
+                    <div className="lg:w-[50%]">
+                        <div className=" lg:flex justify-between">
+                          <div className=" flex justify-between">
+                          <div className=" flex gap-x-[10px] items-center">
                                 <h5 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>Per Page:</h5>
                                 <input type="text" className=' border-[1px] border-[#E7E6EF] w-[80px] h-[40px] outline-none ' />
                             </div>
@@ -44,17 +45,20 @@ const EcommerceAcceories = () => {
                                 <input type="text" className=' border-[1px] border-[#E7E6EF] w-[100px] h-[40px] outline-none font-hakto font-medium text-[#8A8FB9] text-[12px] pl-[5px]'
                                     placeholder='Best Match ' />
                             </div>
-                            <div className="flex gap-x-[10px] items-center">
+                          </div>
+                            <div className="flex gap-x-[10px] items-center lg:my-0 my-[10px]">
                                 <div className=" flex gap-x-[10px] items-center">
                                     <h3 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>View:</h3>
                                     <IoGridSharp />
                                     <FaList />
                                 </div>
-                                <input type="text" className=' border-[1px] border-[#E7E6EF] w-[200px] h-[40px] outline-none ' />
+                                <input type="text" className=' border-[1px] border-[#E7E6EF] lg:w-[200px] w-full h-[40px] outline-none ' />
                             </div>
                         </div>
                     </div>
                 </div>
+
+
                 <div className=" flex flex-wrap">
                     {data.map((item) => (
                         <div className="w-[24%] flex flex-wrap">
@@ -84,7 +88,7 @@ const EcommerceAcceories = () => {
                         </div>
                     ))}
                 </div>
-                <div className=" pl-[200px] py-4">
+                <div className=" mx-auto py-4">
                     <img src={newss} alt="" />
                 </div>
             </Container>
