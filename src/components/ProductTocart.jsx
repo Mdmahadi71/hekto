@@ -35,15 +35,15 @@ const ProductTocart = () => {
         dataId()
     }, [])
 
-    let Reating = Array.from({length : 5},(elm , index)=>{
+    let Reating = Array.from({ length: 5 }, (elm, index) => {
         let number = index + 0.5
-        return(
-            product.rating > index + 1  ?<IoIosStar /> : product.rating > number  ? <IoMdStarHalf /> : <FaRegStar/>
+        return (
+            product.rating > index + 1 ? <IoIosStar /> : product.rating > number ? <IoMdStarHalf /> : <FaRegStar />
         )
     })
 
-    let handelcart = ((item)=>{
-        dispacth(addtoCart({...item , qun:1}))
+    let handelcart = ((item) => {
+        dispacth(addtoCart({ ...item, qun: 1 }))
     })
 
 
@@ -63,10 +63,10 @@ const ProductTocart = () => {
                 <Container>
                     <div className=" border-[1px] px-[15px] py-[20px]  shadow-md">
 
-                        <div className=" flex justify-between items-center">
-                            <div className="w-[50%]">
+                        <div className=" lg:flex justify-between items-center">
+                            <div className="lg:w-[50%]">
                                 {product?.images?.map((item) => (
-                                    <div className="flex gap-x-[50px] ">
+                                    <div className="flex lg:gap-x-[50px] gap-x-[20px] ">
                                         <div className="w-[20%]">
                                             <div className=" ">
                                                 <div className="w-[151px] h-[155px] my-[11px]">
@@ -80,42 +80,37 @@ const ProductTocart = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="w-[27%]">
-                                            <div className=" w-[375px] h-[487px] my-[11px]">
-                                                <img src={item} alt="" />
+                                        <div className="w-[27%] lg:my-0 my-[50%]">
+                                            <div className=" lg:w-[375px] w-[240px] lg:h-[487px] my-[11px]">
+                                                <img src={item} className=' w-full' alt="" />
                                             </div>
                                         </div>
                                     </div>
                                 ))}
 
                             </div>
-
-                            <div className="w-[50%]">
-
+                            <div className="lg:w-[50%]">
                                 <div className="">
-                                 
-                                        <div className="">
-
-                                        <h3 className=' font-hakto font-semibold text-[#0D134E] text-[35px]'>{product.title}</h3>
-
-                                        <div className=" flex gap-x-[10px] items-center text-[#FFC416]">
-                                          {Reating}
+                                    <div className="">
+                                        <h3 className=' font-hakto font-semibold text-[#0D134E] text-[35px] text-center lg:text-start'>{product.title}</h3>
+                                        <div className=" flex gap-x-[10px] items-center justify-center lg:justify-start text-[#FFC416]">
+                                            {Reating}
                                             <p>(22)</p>
                                         </div>
-                                        <h5><span className=' font-hakto font-light text-[#151875] text-[16px]'>${product.price}</span> <span className=' font-hakto font-light text-[#FB2E86] text-[16px]'>${product.price}</span></h5>
-                                        <h3 className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px]'>color</h3>
-                                        <p className=' font-hakto font-light text-[#A9ACC6] text-[16px] py-[7px]'>{product.description}</p>
+                                        <h5 className=' text-center lg:text-start'><span className=' font-hakto font-light text-[#151875] text-[16px] '>${product.price}</span> <span className=' font-hakto font-light text-[#FB2E86] text-[16px]'>${product.price}</span></h5>
+                                        <h3 className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px] text-center lg:text-start'>color</h3>
+                                        <p className=' font-hakto font-light text-[#A9ACC6] text-[16px] py-[7px] text-center lg:text-start'>{product.description}</p>
                                         <div className=" flex gap-x-[20px] items-center justify-center">
                                             <Link to='/Shopping'>
-                                            <button onClick={()=>handelcart(product)} className=' border-[1px] px-4 py-3 bg-[#FB2E86] text-[#151875] rounded-[5px]'>
-                                                <a className=' font-hakto font-medium text-[18px]'>Add To cart</a>
-                                            </button>
+                                                <button onClick={() => handelcart(product)} className=' border-[1px] px-4 py-3 bg-[#FB2E86] text-[#151875] rounded-[5px]'>
+                                                    <a className=' font-hakto font-medium text-[18px]'>Add To cart</a>
+                                                </button>
                                             </Link>
                                             <i><FaRegHeart /></i>
                                         </div>
-                                        <h3 ><span className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px]'>Categories:</span> <span className=' font-hakto font-medium text-[19px] text-[#FB2E86] py-[7px]'>{product.category}</span></h3>
-                                        <h5><span  className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px]'>Tags:</span> <span className=' font-hakto font-medium text-[19px] text-[#FB2E86] py-[7px]'>{product.tags}</span></h5>
-                                        <div className=" flex gap-x-[20px] items-center py-[7px]">
+                                        <h3 className=' text-center lg:text-start'><span className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px]'>Categories:</span> <span className=' font-hakto font-medium text-[19px] text-[#FB2E86] py-[7px]'>{product.category}</span></h3>
+                                        <h5 className=' text-center lg:text-start'><span className=' font-hakto font-medium text-[19px] text-[#0D134E] py-[7px]'>Tags:</span> <span className=' font-hakto font-medium text-[19px] text-[#FB2E86] py-[7px]'>{product.tags}</span></h5>
+                                        <div className=" flex gap-x-[20px] items-center justify-center lg:justify-start py-[7px]">
                                             <h3 className=' font-hakto font-medium text-[19px] text-[#0D134E]'>Share</h3>
                                             <div className=" flex gap-x-[20px]">
                                                 <FaFacebookF />
@@ -125,18 +120,17 @@ const ProductTocart = () => {
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
 
                         </div>
-
-
-
                     </div>
                 </Container>
             </div>
+
+
             <div className=' bg-[#F9F8FE] py-[40px]'>
                 <Container>
                     <div className="">
@@ -197,7 +191,7 @@ const ProductTocart = () => {
                         <div className="w-[24%]">
                             <div className=" py-3">
                                 <img src={relatedImg} className='w-full' alt="" />
-                                <div className=" flex justify-between items-center py-[10px]">
+                                <div className=" lg:flex justify-between items-center py-[10px]">
                                     <h3 className=' font-hakto font-medium text-[16px] text-[#151875]'>Mens Fashion Wear</h3>
                                     <div className=" flex gap-x-[10px]">
                                         <FaStar />
@@ -213,7 +207,7 @@ const ProductTocart = () => {
                         <div className="w-[24%]">
                             <div className=" py-3">
                                 <img src={relatedImg} className='w-full' alt="" />
-                                <div className=" flex justify-between items-center py-[10px]">
+                                <div className=" lg:flex justify-between items-center py-[10px]">
                                     <h3 className=' font-hakto font-medium text-[16px] text-[#151875]'>Mens Fashion Wear</h3>
                                     <div className=" flex gap-x-[10px]">
                                         <FaStar />
@@ -229,7 +223,7 @@ const ProductTocart = () => {
                         <div className="w-[24%]">
                             <div className=" py-3">
                                 <img src={relatedImg} className='w-full' alt="" />
-                                <div className=" flex justify-between items-center py-[10px]">
+                                <div className=" lg:flex justify-between items-center py-[10px]">
                                     <h3 className=' font-hakto font-medium text-[16px] text-[#151875]'>Mens Fashion Wear</h3>
                                     <div className=" flex gap-x-[10px]">
                                         <FaStar />
@@ -245,7 +239,7 @@ const ProductTocart = () => {
                         <div className="w-[24%]">
                             <div className=" py-3">
                                 <img src={relatedImg} className='w-full' alt="" />
-                                <div className=" flex justify-between items-center py-[10px]">
+                                <div className=" lg:flex justify-between items-center py-[10px]">
                                     <h3 className=' font-hakto font-medium text-[16px] text-[#151875]'>Mens Fashion Wear</h3>
                                     <div className=" flex gap-x-[10px]">
                                         <FaStar />
@@ -258,8 +252,9 @@ const ProductTocart = () => {
                                 <h6 className=' font-hakto font-medium text-[13px] text-[#151875]'>$43.00</h6>
                             </div>
                         </div>
+
                     </div>
-                    <div className=" pl-[200px] py-4">
+                    <div className=" mx-auto py-4">
                         <img src={newss} alt="" />
                     </div>
                 </Container>

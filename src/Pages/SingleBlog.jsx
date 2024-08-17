@@ -37,8 +37,8 @@ const SingleBlog = () => {
             </div>
             <div className=" py-[50px]">
                 <Container>
-                    <div className=" flex justify-between">
-                        <div className="w-[68%]">
+                    <div className=" lg:flex justify-between">
+                        <div className="lg:w-[68%]">
                             <div className="">
                                 <div className="">
                                     <img src={Mauristow} alt="" />
@@ -82,9 +82,11 @@ const SingleBlog = () => {
                                         <img src={QuamImg} className=' w-full' alt="" />
                                         <div className="">
                                             <h5 className=' font-hakto font-medium text-[19px] text-[#000000]'>Quam sed</h5>
-                                            <div className=" flex gap-x-[10px]">
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                            <div className=" ">
+                                                <div className=" flex gap-x-2">
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                                </div>
                                                 <div className=" flex gap-x-[5px]">
                                                     <IoIosStar className=' text-[#FFD659]' />
                                                     <IoIosStar className=' text-[#FFD659]' />
@@ -101,9 +103,11 @@ const SingleBlog = () => {
                                         <img src={QuamImg} className=' w-full' alt="" />
                                         <div className="">
                                             <h5 className=' font-hakto font-medium text-[19px] text-[#000000]'>Quam sed</h5>
-                                            <div className=" flex gap-x-[10px]">
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                            <div className=" ">
+                                                <div className=" flex gap-x-2">
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                                </div>
                                                 <div className=" flex gap-x-[5px]">
                                                     <IoIosStar className=' text-[#FFD659]' />
                                                     <IoIosStar className=' text-[#FFD659]' />
@@ -120,9 +124,11 @@ const SingleBlog = () => {
                                         <img src={QuamImg} className=' w-full' alt="" />
                                         <div className="">
                                             <h5 className=' font-hakto font-medium text-[19px] text-[#000000]'>Quam sed</h5>
-                                            <div className=" flex gap-x-[10px]">
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                            <div className=" ">
+                                                <div className=" flex gap-x-2">
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                                </div>
                                                 <div className=" flex gap-x-[5px]">
                                                     <IoIosStar className=' text-[#FFD659]' />
                                                     <IoIosStar className=' text-[#FFD659]' />
@@ -139,9 +145,11 @@ const SingleBlog = () => {
                                         <img src={QuamImg} className=' w-full' alt="" />
                                         <div className="">
                                             <h5 className=' font-hakto font-medium text-[19px] text-[#000000]'>Quam sed</h5>
-                                            <div className=" flex gap-x-[10px]">
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
-                                                <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                            <div className=" ">
+                                                <div className=" flex gap-x-2">
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#232A69]'>$32.00</h4>
+                                                  <h4 className=' font-hakto font-medium text-[13px] text-[#FF38B0]'>$32.00</h4>
+                                                </div>
                                                 <div className=" flex gap-x-[5px]">
                                                     <IoIosStar className=' text-[#FFD659]' />
                                                     <IoIosStar className=' text-[#FFD659]' />
@@ -153,6 +161,8 @@ const SingleBlog = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                           
                             </div>
 
 
@@ -183,7 +193,7 @@ const SingleBlog = () => {
                                 </div>
                             </div>
 
-                            <div className=" w-[80%]">
+                            <div className=" lg:w-[80%]">
                                 <div className=" border-[2px] px-3 py-3 shadow">
                                     <div className=" flex gap-x-[20px] items-center">
                                         <img src={playerImg} alt="" />
@@ -205,7 +215,7 @@ const SingleBlog = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-[90%]">
+                            <div className="lg:w-[90%]">
                                 <div className=" flex justify-between py-[30px]">
                                     <div className="w-[48%] relative">
                                         <input type="text" placeholder='Your Name*' className=' font-hakto font-light text-[#8A8FB9] text-[13px] pl-[30px] w-full h-[50px] outline-none border-[1px]' />
@@ -233,7 +243,7 @@ const SingleBlog = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="w-[29%]">
+                        <div className="lg:w-[29%]">
                             <div className="">
                                 <h3 className=' font-hakto font-semibold text-[22px] text-[#151875]'>Search</h3>
                                 <div className="relative">
@@ -394,7 +404,7 @@ const SingleBlog = () => {
                         </div>
                     </div>
 
-                    <div className=" pl-[200px] py-[50px]">
+                    <div className=" mx-auto py-[50px]">
                         <img src={newss} alt="" />
                     </div>
                 </Container>

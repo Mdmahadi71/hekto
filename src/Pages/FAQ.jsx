@@ -20,8 +20,8 @@ const FAQ = () => {
 
             <div className=" py-[50px]">
                 <Container>
-                    <div className=" flex justify-between">
-                        <div className="w-[50%]">
+                    <div className=" lg:flex justify-between">
+                        <div className="lg:w-[50%]">
                             <div className="">
                                 <h3 className=' font-hakto font-medium text-[#1D3178] text-[35px] pt-[20px]'>Generel Information</h3>
                                 <h6 className=' font-hakto font-normal text-[17px] text-[#1D3178]'>Eu dictumst cum at sed euismood condimentum?</h6>
@@ -39,7 +39,7 @@ const FAQ = () => {
 
                             </div>
                         </div>
-                        <div className="w-[50%]">
+                        <div className="lg:w-[50%]">
                             <div className=" border-[1px] px-[30px] py-[40px] bg-[#F8F8FD]">
                                 <h3 className=' font-hakto font-medium text-[#1D3178] text-[24px]'>Ask a Question</h3>
 
@@ -57,7 +57,7 @@ const FAQ = () => {
                         </div>
                     </div>
 
-                    <div className=" pl-[200px] py-[40px]">
+                    <div className=" mx-auto py-[40px]">
                         <img src={newss} alt="" />
                     </div>
                 </Container>

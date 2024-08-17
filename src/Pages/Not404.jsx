@@ -11,8 +11,8 @@ const Not404 = () => {
                 <div className=" text-center">
                     <h3 className=' font-hakto font-semibold text-[36px] text-[#101750]'>404 Not Found</h3>
                 </div>
-                <div className=" pl-[200px]">
-                    <img src={not404Img} alt="" />
+                <div className=" lg:w-[600px] mx-auto">
+                    <img src={not404Img} className=' w-full' alt="" />
 
                 </div>
                 <div className=" items-center justify-center text-center py-[40px]">
@@ -21,7 +21,7 @@ const Not404 = () => {
                     </button>
                 </div>
 
-                <div className=" pl-[200px] py-[50px]">
+                <div className=" mx-auto py-[50px]">
                     <img src={newss} alt="" />
                 </div>
             </Container>

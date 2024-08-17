@@ -105,7 +105,7 @@ const SidebarMain = () => {
                     </div>
                 </div>
 
-                <div className=" flex justify-between">
+                <div className=" lg:flex justify-between">
                     <div className="w-[25%]">
                         <div className="">
                             <div className="">
@@ -277,7 +277,7 @@ const SidebarMain = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[75%]">
+                    <div className="lg:w-[75%]">
                         <Post Allpage={Allpage} cotagoryFiter={cotagoryFiter} Multi={Multi} />
                         <div className=" text-end">
                             <PagenationArrea pageNumber={pageNumber} prewPage={prewPage} nextPage={nextPage} pageAreaNbr={pageAreaNbr} />

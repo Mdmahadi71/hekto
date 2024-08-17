@@ -22,15 +22,15 @@ const AboutMain = () => {
 
       <div className=' py-[50px]'>
         <Container>
-          <div className=" flex justify-between items-center">
-            <div className="w-[50%]">
-              <div className="bg-[#2B3CAB] w-[555px] h-[390px] rounded-[7px] relative group">
-                <div className=" w-[555px] h-[390px] absolute group-hover:top-[-20px] group-hover:right-[-20px] duration-300">
-                <img src={AboutImg} alt="" />
+          <div className=" lg:flex justify-between lg:gap-x-[100px] items-center">
+            <div className="lg:w-[50%]">
+              <div className="bg-[#2B3CAB] lg:w-[555px] w-[300px] lg:h-[390px] h-[200px]  rounded-[7px] relative group">
+                <div className=" lg:w-[555px] w-[300px] lg:h-[390px]  h-[200px]  absolute group-hover:top-[-20px] group-hover:right-[-20px] duration-300">
+                <img src={AboutImg} className=' w-full' alt="" />
                 </div>
               </div>
             </div>
-            <div className="w-[50%]">
+            <div className="lg:w-[50%]">
               <div className=" py-[30px]">
                 <h3 className=' font-hakto font-medium text-[#151875] text-[35px]'>Know About Our Ecomerce
                   Business, History</h3>
@@ -52,11 +52,11 @@ const AboutMain = () => {
           <div className=" py-[10px] text-center">
             <h4 className=' font-hakto font-medium text-[42px] text-[#000000]'>Our Features</h4>
           </div>
-          <div className=" flex  py-[30px]">
-            <div className="w-[24%]  hover:border-b-[3px] hover:border-[#FF9100] duration-300 ">
+          <div className=" lg:flex  justify-between py-[30px]">
+            <div className="lg:w-[24%] w-full  hover:border-b-[3px] hover:border-[#FF9100] duration-300 lg:my-0 my-[20px]">
               <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                <div className=" translate-x-[40%] py-[30px]">
-                  <img src={Whats} alt="" />
+                <div className=" w-[100px] mx-auto py-[30px]">
+                  <img src={Whats} className=' w-full' alt="" />
                 </div>
                 <div className="">
                   <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -65,10 +65,10 @@ const AboutMain = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[24%]  hover:border-b-[3px] hover:border-[#FF9100] duration-300 ">
+            <div className="lg:w-[24%] w-full  hover:border-b-[3px] hover:border-[#FF9100] duration-300 lg:my-0 my-[20px]">
               <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                <div className=" translate-x-[40%] py-[30px]">
-                  <img src={Whats} alt="" />
+                <div className=" w-[100px] mx-auto py-[30px]">
+                  <img src={Whats} className=' w-full' alt="" />
                 </div>
                 <div className="">
                   <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -77,10 +77,10 @@ const AboutMain = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[24%]  hover:border-b-[3px] hover:border-[#FF9100] duration-300 ">
+            <div className="lg:w-[24%] w-full  hover:border-b-[3px] hover:border-[#FF9100] duration-300 lg:my-0 my-[20px]">
               <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                <div className=" translate-x-[40%] py-[30px]">
-                  <img src={Whats} alt="" />
+                <div className=" w-[100px] mx-auto py-[30px]">
+                  <img src={Whats} className=' w-full' alt="" />
                 </div>
                 <div className="">
                   <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -89,10 +89,10 @@ const AboutMain = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[24%]  hover:border-b-[3px] hover:border-[#FF9100] duration-300 ">
+            <div className="lg:w-[24%] w-full  hover:border-b-[3px] hover:border-[#FF9100] duration-300 lg:my-0 my-[20px]">
               <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                <div className=" translate-x-[40%] py-[30px]">
-                  <img src={Whats} alt="" />
+                <div className=" w-[100px] mx-auto py-[30px]">
+                  <img src={Whats} className=' w-full' alt="" />
                 </div>
                 <div className="">
                   <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -101,10 +101,13 @@ const AboutMain = () => {
                 </div>
               </div>
             </div>
+
+
+           
           </div>
         </Container>
       </div>
-
+{/* 
       <div className=" bg-[#FBFBFF] py-[50px]">
         <Container>
           <div className="">
@@ -129,7 +132,7 @@ const AboutMain = () => {
             </div>
           </div>
         </Container>
-      </div>
+      </div> */}
 
     </>
   )
