@@ -86,7 +86,7 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                             <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
                                             <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
                                             <div className=" flex gap-x-[10px] text-[#FFC416]">
-                                               {Reating}
+                                               <h3 className='text-[#FFC416]'>{Reating}</h3>
                                             </div>
                                         </div>
                                         <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>{item.description}</p>
@@ -153,14 +153,14 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                     ""}`}>
                     {Allpage.map((item) => (
                         <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
-                            <div className=" flex gap-x-[40px] items-center">
+                            <div className=" flex lg:gap-x-[40px] gap-x-[10px] items-center">
                                 <Link to={`/Shopsidebar/${item.id}`}>
                                     <div className="">
                                         <img src={item.thumbnail} alt="" />
                                     </div>
                                 </Link>
                                 <div className=" w-[50%]">
-                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
+                                    <div className=" lg:flex  items-center gap-x-[20px] py-[8px]">
                                         <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>{item.title}</h3>
                                         <div className=" flex gap-x-[10px] ">
                                             <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
@@ -168,9 +168,11 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                             <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
                                         </div>
                                     </div>
-                                    <div className=" flex gap-x-[20px] items-center py-4">
+                                    <div className=" lg:flex gap-x-[20px] items-center py-4">
+                                        <div className="flex gap-x-[20px]">
                                         <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
                                         <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
+                                        </div>
                                         <div className=" flex gap-x-[10px]">
                                             {/* <FaRegStar />
                                             <FaRegStar />

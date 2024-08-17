@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
-import { FaList, FaRegHeart, FaCartPlus } from "react-icons/fa";
+import { FaList, FaRegHeart, FaCartPlus ,FaBars} from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { IoMdStarOutline } from "react-icons/io";
 import { TbZoomIn } from "react-icons/tb";
@@ -14,6 +14,7 @@ import { DataApi } from './ContextApi';
 import Post from './Pagenation/Post';
 import PagenationArrea from './Pagenation/PagenationArrea';
 import { Link } from 'react-router-dom'
+import { RxCross1 } from "react-icons/rx";
 
 
 const SidebarMain = () => {
@@ -24,6 +25,8 @@ const SidebarMain = () => {
     let [brands, setbrands] = useState([])
     let [cotagoryFiter, setcotagoryFiter] = useState([])
     let [Multi, setMulti] = useState('')
+    let [catebares,setcatebares] = useState(false)
+
 
     let lastpage = pagenumber * parpage
     let fastpage = lastpage - parpage
@@ -106,7 +109,11 @@ const SidebarMain = () => {
                 </div>
 
                 <div className=" lg:flex justify-between">
-                    <div className="w-[25%]">
+                    <div onClick={()=>setcatebares(!catebares)} className=" lg:hidden flex gap-x-[20px] items-center">
+                        <h3 className=' font-hakto font-medium text-[20px] '>Catagory Bars</h3>
+                        <h2>{catebares==true ? <RxCross1/> : <FaBars/>}</h2>
+                    </div>
+                    <div className={`lg:w-[25%] absolute lg:static duration-300 ${catebares==true ? " top-[800px] left-[0] bg-[#dfc9c9]" :" top-[800px] left-[-500px] "}`}>
                         <div className="">
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Product Brand</h2>
@@ -234,7 +241,7 @@ const SidebarMain = () => {
 
                             </div>
                             <div className="relative py-[30px]">
-                                <input type=" text" className=' border-[1px] border-[#BCBDDB] w-[300px] h-[35px] outline-none 
+                                <input type=" text" className=' border-[1px] border-[#BCBDDB] w-full h-[35px] outline-none 
                                  font-hakto font-light text-[12px] text-[#151875] pl-[10px]' placeholder='$10.00 - 20000$' />
                                 <div className=" absolute top-[40px] right-[40px] font-light text-[16px] text-[#151875]">
                                     <CiSearch />
