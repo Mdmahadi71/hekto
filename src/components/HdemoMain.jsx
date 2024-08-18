@@ -133,10 +133,11 @@ const HdemoMain = () => {
                                     <FaCheckCircle className=' text-[#19D16F] text-[18px]' />
                                     <p className=' font-hakto font-medium text-[#8A91AB] text-[12px]'>Shipping & taxes calculated at checkout</p>
                                 </div>
-
+                                <Link to={'/OrderCompleted'} >
                                 <button className=' border-[1px] py-[15px] bg-[#19D16F] w-full'>
-                                    <a className=' font-hakto font-medium text-[#FFFFFF] text-[16px]'>Proceed To Checkout</a>
+                                    <a className=' font-hakto font-medium text-[#FFFFFF] text-[16px]'>Proceed To Order</a>
                                 </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

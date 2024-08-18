@@ -5,6 +5,8 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from './store.js'
 import { ContextApi } from './components/ContextApi.jsx'
+import firebaseConfig from './firebaseConfig.js'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

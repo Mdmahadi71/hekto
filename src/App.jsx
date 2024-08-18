@@ -16,6 +16,7 @@ import SingleBlog from './Pages/SingleBlog'
 import ContactUs from './Pages/ContactUs'
 import Not404 from './Pages/Not404'
 import FAQ from './Pages/FAQ'
+import SingUp from './Pages/SingUp'
 
 
 
@@ -39,6 +40,7 @@ function App() {
        <Route path="/SingleBlog" element={<SingleBlog/>}> </Route>
        <Route path="/ContactUs" element={<ContactUs/>}> </Route>
        <Route path="/Faq" element={<FAQ/>}> </Route>
+       <Route path="/singup" element={<SingUp/>}> </Route>
     </Route>
     <Route path="/not404" element={<Not404/>}> </Route>
     </>

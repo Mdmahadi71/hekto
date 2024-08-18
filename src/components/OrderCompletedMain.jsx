@@ -31,10 +31,13 @@ const OrderCompletedMain = () => {
                                     <FaCheck className=' text-[35px] text-[#FF1788]' />
                                   </div>
                                 <h3 className=' font-hakto font-semibold text-[#101750] text-[35px]'>Your Order Is Completed! </h3>
-                                <p className=' font-hakto font-normal text-[#8D92A7] text-[16px]'>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
+                                <p className=' font-hakto font-normal text-[#8D92A7] text-[16px]'>Thank you for your order! Your order is being processed and will
+                                     be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
+                                <Link to={'/Shopsidebar'}>   
                                 <button className=' border-[1px] border-[#FF1788] bg-[#FF1788] px-[15px] py-[10px]  rounded-[5px] mt-[15px]'>
                                     <a className=' font-hakto font-medium text-[16px] text-white'>Continue Shopping</a>
                                 </button>
+                                </Link> 
                                 <div className=" absolute bottom-[-40px] lg:right-[-40px] right-0">
                                     <img src={checklist2} alt="" />
                                 </div>
