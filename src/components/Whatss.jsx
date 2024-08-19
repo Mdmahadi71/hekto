@@ -10,10 +10,10 @@ const Whatss = () => {
                 <h2 className=' font-hakto font-semibold text-[#151875] text-[42px] text-center py-[20px]'>What Shopex Offer!</h2>
             </div>
          <div className=" lg:flex lg:gap-x-1">
-            <div className="lg:w-[24%]">
+            <div className="lg:w-[24%] my-[20px]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                    <div className=" translate-x-[40%] py-[30px]">
-                    <img src={Whats} alt="" />
+                    <div className=" w-[100px] mx-auto py-[30px] ">
+                    <img src={Whats} className='  w-full' alt="" />
                     </div>
                     <div className="">
                         <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -22,10 +22,10 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:w-[24%]">
+            <div className="lg:w-[24%] my-[20px]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                    <div className=" translate-x-[40%] py-[30px]">
-                    <img src={Whats} alt="" />
+                    <div className=" w-[100px] mx-auto py-[30px] ">
+                    <img src={Whats} className='  w-full' alt="" />
                     </div>
                     <div className="">
                         <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -34,10 +34,10 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:w-[24%]">
+            <div className="lg:w-[24%] my-[20px]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                    <div className=" translate-x-[40%] py-[30px]">
-                    <img src={Whats} alt="" />
+                    <div className=" w-[100px] mx-auto py-[30px] ">
+                    <img src={Whats} className='  w-full' alt="" />
                     </div>
                     <div className="">
                         <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -46,10 +46,10 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:w-[24%]">
+            <div className="lg:w-[24%] my-[20px]">
                 <div className=" border-[1px] bg-white shadow-xl px-3 py-[50px] text-center">
-                    <div className=" translate-x-[40%] py-[30px]">
-                    <img src={Whats} alt="" />
+                    <div className=" w-[100px] mx-auto py-[30px] ">
+                    <img src={Whats} className='  w-full' alt="" />
                     </div>
                     <div className="">
                         <h2 className=' font-hakto font-semibold text-[22px] text-[#151875]'>24/7 Support</h2>
@@ -58,6 +58,7 @@ const Whatss = () => {
                     </div>
                 </div>
             </div>
+           
          </div>
         </Container>
       </div>

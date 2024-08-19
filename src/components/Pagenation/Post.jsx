@@ -117,40 +117,40 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                 :
                 <div className={`${Multi == "ActiveMulti" ?
                     
-                   "flex"
-                    // <div className=" flex flex-wrap">
-                    //     {Allpage.map((item)=>(
-                    //         <div className="w-[24%] flex flex-wrap">
+                   
+                    (<div className=" flex flex-wrap">
+                        {Allpage.map((item)=>(
+                            <div className="w-[24%] flex flex-wrap">
 
-                    //                 <div className=" group overflow-hidden">
-                    //                 <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
-                    //                      <div className=" w-[90%] justify-center">
-                    //                        <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
-                    //                      </div>
-                    //                     <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">              
-                    //                         <FaCartPlus className=' text-[40px] py-[10px]'/>
-                    //                         <TbZoomIn className=' text-[40px] py-[10px]'/>
-                    //                         <FaRegHeart className=' text-[40px] py-[10px]'/>
-                    //                 </div>
-                    //                 </div>
+                                    <div className=" group overflow-hidden">
+                                    <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
+                                         <div className=" w-[90%] justify-center">
+                                           <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
+                                         </div>
+                                        <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">              
+                                            <FaCartPlus className=' text-[40px] py-[10px]'/>
+                                            <TbZoomIn className=' text-[40px] py-[10px]'/>
+                                            <FaRegHeart className=' text-[40px] py-[10px]'/>
+                                    </div>
+                                    </div>
 
-                    //                 <div className=" text-center py-[20px]">
-                    //                     <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
-                    //                     <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
-                    //                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                    //                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                    //                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                    //                     </div>
-                    //                     <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //          ))}
-                    //      </div>
+                                    <div className=" text-center py-[20px]">
+                                        <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
+                                        <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
+                                        </div>
+                                        <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                             ))}
+                         </div>)
                     :
 
 
-                    ""}`}>
+                    ('')}`}>
                     {Allpage.map((item) => (
                         <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
                             <div className=" flex lg:gap-x-[40px] gap-x-[10px] items-center">
