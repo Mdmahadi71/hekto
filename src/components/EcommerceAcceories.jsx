@@ -1,14 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext ,useState,useEffect} from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
 import { FaList, FaRegHeart, FaCartPlus } from "react-icons/fa";
-import GridImg from '../assets/gridlist.png'
 import { TbZoomIn } from "react-icons/tb";
-import gritlists from '../assets/gridlist1.png'
-import GridlistImgd from '../assets/gridlist3.png'
 import newss from '../assets/Newsd.png'
 import { DataApi } from './ContextApi';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import PagenationArrea from './Pagenation/PagenationArrea';
+import { useDispatch } from 'react-redux';
+import { FaRegStar } from "react-icons/fa6";
+import axios from 'axios';
+import { addtoCart } from './Slice/productSlice';
 
 
 
@@ -16,6 +18,69 @@ const EcommerceAcceories = () => {
 
 
     let data = useContext(DataApi)
+    let [pagenumber, setpagenumber] = useState(1)
+    let [parpage, setparpage] = useState(8)
+    let [cotagory, setcotagory] = useState([])
+    let [brands, setbrands] = useState([])
+    let [cotagoryFiter, setcotagoryFiter] = useState([])
+    let [filtervags, setfiltervags] = useState([])
+    let [RatingProduct,setRatingProduct] = useState([])
+    let dispacth = useDispatch()
+    let productId = useParams()
+
+    let lastpage = pagenumber * parpage
+    let fastpage = lastpage - parpage
+    let Allpage = data.slice(fastpage, lastpage)
+
+
+    let dataId = () => {
+        axios.get(`https://dummyjson.com/products/${productId.Id}`).then((response) => {
+            setRatingProduct(response.data)
+        })
+    }
+
+    useEffect(() => {
+        dataId()
+    }, [])
+
+    let pageNumber = []
+    for (let i = 0; i < Math.ceil(cotagoryFiter.length > 0 ? cotagoryFiter : data.length / parpage); i++) {
+        pageNumber.push(i)
+    }
+    let pageAreaNbr = ((pageNumber) => {
+        setpagenumber(pageNumber + 1)
+    })
+    let nextPage = ((pageNumber) => {
+        setpagenumber((state) => state + 1)
+    })
+    let prewPage = (() => {
+        setpagenumber((state) => state - 1)
+    })
+    useEffect(() => {
+        let Showvag = cotagoryFiter.slice(0, 5)
+        setfiltervags(Showvag)
+    }, [cotagoryFiter])
+
+
+    useEffect(() => {
+        setcotagory([...new Set(data.map((item) => item.category))])
+        setbrands([...new Set(data.map((item) => item.brand))])
+    }, [data])
+
+    let Reating = Array.from({length : 5},(elm , index)=>{
+        let number = index + 0.5
+        return(
+            RatingProduct.rating > index + 1  ? <IoIosStar /> : RatingProduct.rating > number  ? <IoMdStarHalf /> : <FaRegStar/>
+        )
+    })
+  
+    let cartitemt = ((item)=>{
+        dispacth(addtoCart({...item, qun:1 }))
+    })
+    let Lovecartt = ((item)=>{
+        dispacth(addtoCart({...item , qun:1}))
+    })
+
     return (
         <div>
             <div className='bg-[#F6F5FF] py-[100px]'>
@@ -58,36 +123,88 @@ const EcommerceAcceories = () => {
                     </div>
                 </div>
 
-
-                <div className=" flex flex-wrap">
-                    {data.map((item) => (
-                        <div className="w-[24%] flex flex-wrap">
-
-                            <div className=" group overflow-hidden">
-                                <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
-                                    <div className=" w-[90%] justify-center">
-                                        <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
+                <div className="">
+                    {cotagoryFiter.length > 0 ?
+                        <div className=" flex flex-wrap">
+                        {filtervags.map((item) => (
+                            <div className="w-[24%] flex  flex-wrap">
+    
+                                <div className=" group overflow-hidden">
+                                    <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
+                                    
+                                        <div className=" w-[90%] justify-center">
+                                            <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
+                                        </div>
+                                       
+                                        <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">
+                                           <div  className="">
+                                             <FaCartPlus className=' text-[40px] py-[10px]' />
+                                           </div>
+                                            <TbZoomIn className=' text-[40px] py-[10px]' />
+                                            <div  className="">
+                                              <FaRegHeart className=' text-[40px] py-[10px]' />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">
-                                        <FaCartPlus className=' text-[40px] py-[10px]' />
-                                        <TbZoomIn className=' text-[40px] py-[10px]' />
-                                        <FaRegHeart className=' text-[40px] py-[10px]' />
+    
+                                    <div className=" text-center py-[20px]">
+                                        <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
+                                        <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
+                                        </div>
+                                        <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
                                     </div>
-                                </div>
-
-                                <div className=" text-center py-[20px]">
-                                    <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
-                                    <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
-                                        <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
-                                        <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
-                                        <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
-                                    </div>
-                                    <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                     :
+                     <div className=" flex flex-wrap">
+                     {Allpage.map((item) => (
+                         <div className="w-[24%] flex  flex-wrap">
+ 
+                             <div className=" group overflow-hidden">
+                                 <div className="   bg-[#F6F7FB] relative group-hover:bg-[#EBF4F3] duration-300">
+                                 <Link to={`/Shopsidebar/${item.id}`}>
+                                     <div className=" w-[90%] justify-center">
+                                         <img src={item.thumbnail} className='py-[40px] w-full ' alt="" />
+                                     </div>
+                                     </Link>
+                                     <div className=" absolute bottom-1 left-[-50px] group-hover:left-0 duration-300">
+                                         <div onClick={()=> cartitemt(item)} className="  cursor-pointer">
+                                           <FaCartPlus className=' text-[40px] py-[10px]' />
+                                         </div>
+                                         <TbZoomIn className=' text-[40px] py-[10px]' />
+                                         <div onClick={()=> Lovecartt(item)} className=" cursor-pointer">
+                                            <FaRegHeart className=' text-[40px] py-[10px]' />
+                                         </div>
+                                     </div>
+                                 </div>
+ 
+                                 <div className=" text-center py-[20px]">
+                                     <h3 className=' font-hakto font-medium text-[18px] text-[#151875]'>{item.title}</h3>
+                                     <div className=" flex gap-x-[10px] justify-center py-[10px] items-center">
+                                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
+                                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
+                                         <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
+                                     </div>
+                                     <h4><span className=' font-hakto font-normal text-[14px] text-[#151875]'>${item.price} </span> <span className=' font-hakto font-normal text-[14px] text-[#FB2E86]'>${item.price}</span></h4>
+                                 </div>
+                             </div>
+                         </div>
+                     ))}
+                 </div>
+                    }
+                
                 </div>
+
+                <div className=" text-center">
+                        <PagenationArrea  pageNumber={pageNumber} prewPage={prewPage} nextPage={nextPage} pageAreaNbr={pageAreaNbr} />
+                    </div>
+
+
                 <div className=" mx-auto py-4">
                     <img src={newss} alt="" />
                 </div>

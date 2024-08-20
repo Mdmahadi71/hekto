@@ -80,9 +80,9 @@ const Navbar = () => {
                   <a className={`${Activemanu === 'Shop' ? 'font-hakto font-medium text-[16px]  text-[#FB2E86]' : 'font-hakto font-medium text-[16px] text-[#0D0E43] '}`}>Shop</a>
                 </Link>
               </li>
-              <li onClick={() => setActivemanu('Faq')}>
-                <Link to='/Faq'>
-                  <a className={`${Activemanu === 'Faq' ? 'font-hakto font-medium text-[16px]  text-[#FB2E86]' : 'font-hakto font-medium text-[16px] text-[#0D0E43] '}`}>Faq</a>
+              <li onClick={() => setActivemanu('ShopList')}>
+                <Link to='/ShopList'>
+                  <a className={`${Activemanu === 'ShopList' ? 'font-hakto font-medium text-[16px]  text-[#FB2E86]' : 'font-hakto font-medium text-[16px] text-[#0D0E43] '}`}>Shop List</a>
                 </Link>
               </li>
               <li onClick={() => setActivemanu('ShopGrid')}>

@@ -15,8 +15,6 @@ export const productSlice = createSlice({
       }else{
         state.cartItem = [...state.cartItem , action.payload]
         localStorage.setItem('cart',JSON.stringify(state.cartItem))
-        
-       
       }
     },
       

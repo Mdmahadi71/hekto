@@ -55,7 +55,7 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
     let Reating = Array.from({length : 5},(elm , index)=>{
         let number = index + 0.5
         return(
-            RatingProduct.rating > index + 1  ?<IoIosStar /> : RatingProduct.rating > number  ? <IoMdStarHalf /> : <FaRegStar/>
+            RatingProduct.rating > index + 1  ? <IoIosStar /> : RatingProduct.rating > number  ? <IoMdStarHalf /> : <FaRegStar/>
         )
     })
 
@@ -184,11 +184,11 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                     </div>
                                     <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>{item.description}</p>
                                     <div className=" flex gap-x-[40px] pt-[18px]">
-                                        <div onClick={() => cartNav(item)} className="">
+                                        <div onClick={() => cartNav(item)} className=" cursor-pointer">
                                             <FaCartPlus />
                                         </div>
                                         <TbZoomIn />
-                                        <div onClick={() => handelLove(item)} className="">
+                                        <div onClick={() => handelLove(item)} className=" cursor-pointer">
                                             <FaRegHeart />
                                         </div>
                                     </div>
