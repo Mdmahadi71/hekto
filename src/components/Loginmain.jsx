@@ -26,7 +26,7 @@ const Loginmain = () => {
                 },1000)
             })
             .catch((error) => {
-                toast('error')
+                toast('Wrong password')
                 const errorCode = error.code;
                 const errorMessage = error.message;
             });

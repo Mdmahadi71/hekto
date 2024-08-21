@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
 import { FaCheckCircle } from "react-icons/fa";
 import cartpageImg from '../assets/cartpage.png'
@@ -10,6 +10,10 @@ import { Link } from 'react-router-dom'
 const HdemoMain = () => {
     let cartdata = useSelector((state) => state.product.cartItem)
     let dispacth = useDispatch()
+    let [email ,setemail] = useState('')
+    let [name ,setname] = useState('')
+    let [address , setadderss] = useState('')
+    let [password , setpassword] = useState('')
 
     let hendelremove = ((item) => {
         dispacth(productremove(item))
@@ -60,14 +64,14 @@ const HdemoMain = () => {
                                         <h2 className=' font-hakto font-medium text-[18px] text-[#1D3178]'>Shipping address</h2>
 
                                         <div className=" flex justify-between items-center py-[20px]">
-                                            <div className=" w-[47%]">
+                                            <div onChange={(e)=>setname(e.target.value)} className=" w-[47%]">
                                                 <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='First name (optional)' />
                                             </div>
                                             <div className=" w-[47%]">
                                                 <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Last name' />
                                             </div>
                                         </div>
-                                        <div className="py-[20px]">
+                                        <div onChange={(e)=>setadderss(e.target.value)} className="py-[20px]">
                                             <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Address' />
                                         </div>
                                         <div className="py-[20px]">
@@ -83,7 +87,11 @@ const HdemoMain = () => {
                                             <div className=" w-[47%]">
                                                 <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Postal Code' />
                                             </div>
+                                            
                                         </div>
+                                        <div onChange={(e)=>setpassword(e.target.value)} className="">
+                                                <input type="password" name="" className='font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none h-[40px]  w-full bg-[#F8F8FD]' placeholder='Password' id="" />
+                                            </div>
                                     </div>
                                 </div>
 

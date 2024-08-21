@@ -15,8 +15,6 @@ import { addtoCart } from './Slice/productSlice';
 
 
 const EcommerceAcceories = () => {
-
-
     let data = useContext(DataApi)
     let [pagenumber, setpagenumber] = useState(1)
     let [parpage, setparpage] = useState(8)
