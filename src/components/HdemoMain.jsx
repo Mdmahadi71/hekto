@@ -19,6 +19,13 @@ const HdemoMain = () => {
         dispacth(productremove(item))
     })
 
+
+
+
+
+
+    
+
     const { totalPrice, totatQuntity } = cartdata.reduce((acc, item) => {
         acc.totalPrice += item.price * item.qun
         acc.totatQuntity += item.qun

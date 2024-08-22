@@ -82,13 +82,16 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                                 <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
                                             </div>
                                         </div>
-                                        <div className=" flex gap-x-[20px] items-center py-4">
-                                            <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
-                                            <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
-                                            <div className=" flex gap-x-[10px] text-[#FFC416]">
-                                               <h3 className='text-[#FFC416]'>{Reating}</h3>
-                                            </div>
+                                        <div className=" lg:flex gap-x-[20px] items-center py-4">
+                                        <div className="flex gap-x-[20px]">
+                                        <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
+                                        <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
                                         </div>
+                                        <div className=" flex gap-x-[10px] text-[#FFC416]">
+                                         
+                                            {Reating}
+                                        </div>
+                                    </div>
                                         <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>{item.description}</p>
                                         <div className=" flex gap-x-[40px] pt-[18px]">
                                             <div onClick={() => cartNav(item)} className="">
@@ -102,7 +105,7 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                     </div>
                                 </div>
                             </div>
-
+             
                         </div>
                     ))
                     }
@@ -173,12 +176,8 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                                         <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
                                         <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
                                         </div>
-                                        <div className=" flex gap-x-[10px]">
-                                            {/* <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <FaRegStar />
-                                            <IoMdStarOutline /> */}
+                                        <div className=" flex gap-x-[10px] text-[#FFC416]">
+                                          
                                             {Reating}
                                         </div>
                                     </div>
