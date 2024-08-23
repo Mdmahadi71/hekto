@@ -108,9 +108,11 @@ const ShopingCart = () => {
 
 
                         <div className=" flex justify-between py-[30px]">
+                            <Link to={'/Shopsidebar'}>
                             <button className=' border-[1px]  bg-[#FB2E86] px-4 py-3 rounded-[5px] text-white hover:bg-[#19D16F] duration-300'>
                                 <a className=' font-hakto font-medium text-[16px]'>Update Curt</a>
                             </button>
+                            </Link>
                             <button onClick={() => hemdelremoveall()} className=' border-[1px]  bg-[#FB2E86] px-4 py-3 rounded-[5px] text-white hover:bg-[#19D16F] duration-300'>
                                 <a className=' font-hakto font-medium text-[16px]'>Clear Curt</a>
                             </button>

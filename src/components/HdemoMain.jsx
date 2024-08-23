@@ -1,30 +1,23 @@
 import React, { useState } from 'react'
 import Container from './Container'
 import { FaCheckCircle } from "react-icons/fa";
-import cartpageImg from '../assets/cartpage.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { RxCrossCircled } from "react-icons/rx";
 import { productremove } from './Slice/productSlice';
 import { Link } from 'react-router-dom'
 
+
 const HdemoMain = () => {
     let cartdata = useSelector((state) => state.product.cartItem)
+
     let dispacth = useDispatch()
-    let [email ,setemail] = useState('')
-    let [name ,setname] = useState('')
-    let [address , setadderss] = useState('')
-    let [password , setpassword] = useState('')
+
 
     let hendelremove = ((item) => {
         dispacth(productremove(item))
     })
 
 
-
-
-
-
-    
 
     const { totalPrice, totatQuntity } = cartdata.reduce((acc, item) => {
         acc.totalPrice += item.price * item.qun
@@ -59,9 +52,9 @@ const HdemoMain = () => {
                                     <h3 className=' font-hakto font-medium text-[18px] text-[#1D3178]'>Contact Information</h3>
                                     <p className=' font-hakto font-light text-[12px] text-[#C1C8E1]'>Already have an account? Log in</p>
                                 </div>
-                                <div className=" ">
+                                <div  className=" ">
                                     <input type="text" placeholder='Email or mobile phone number'
-                                        className=' font-hakto font-light text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' />
+                                        className=' font-hakto font-light text-[18px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' />
 
                                     <div className=" flex gap-x-[15px] items-center py-[30px]">
                                         <FaCheckCircle className=' text-[#19D16F]' />
@@ -71,14 +64,14 @@ const HdemoMain = () => {
                                         <h2 className=' font-hakto font-medium text-[18px] text-[#1D3178]'>Shipping address</h2>
 
                                         <div className=" flex justify-between items-center py-[20px]">
-                                            <div onChange={(e)=>setname(e.target.value)} className=" w-[47%]">
+                                            <div className=" w-[47%]">
                                                 <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='First name (optional)' />
                                             </div>
                                             <div className=" w-[47%]">
                                                 <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Last name' />
                                             </div>
                                         </div>
-                                        <div onChange={(e)=>setadderss(e.target.value)} className="py-[20px]">
+                                        <div  className="py-[20px]">
                                             <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Address' />
                                         </div>
                                         <div className="py-[20px]">
@@ -96,15 +89,17 @@ const HdemoMain = () => {
                                             </div>
                                             
                                         </div>
-                                        <div onChange={(e)=>setpassword(e.target.value)} className="">
+                                        <div  className="">
                                                 <input type="password" name="" className='font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none h-[40px]  w-full bg-[#F8F8FD]' placeholder='Password' id="" />
                                             </div>
                                     </div>
                                 </div>
 
-                                <button className=' border-[1px] border-[#FB2E86] bg-[#FB2E86] px-[20px] py-[15px] rounded-[5px] my-[30px]'>
-                                    <a className=' font-hakto font-medium text-[#FFFFFF] text-[18px]'>Continue Shipping</a>
-                                </button>
+                                <div  className="">
+                                    <button className=' border-[1px] border-[#FB2E86] bg-[#FB2E86] px-[20px] py-[15px] rounded-[5px] my-[30px]'>
+                                        <h3 className=' font-hakto font-medium text-[#FFFFFF] text-[18px]'>Continue Shipping</h3>
+                                    </button>
+                                </div>
 
 
                             </div>

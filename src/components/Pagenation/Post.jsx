@@ -41,7 +41,9 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
     }
 
     let handelFilHide = () => {
-        setfiltervags(cotagoryFiter)
+        setCount(true)
+        let filterVag = cotagoryFiter.slice(0,5)
+        setfiltervags(filterVag)
     }
 
     let cartNav = (item) => {
@@ -110,9 +112,14 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                     ))
                     }
                     {count ? cotagoryFiter.length > 5 &&
-                        <button onClick={handelFilShow} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Show All</button>
+                        <div className="">
+                            <button onClick={handelFilShow} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Show All</button>
+                        </div>
                         :
-                        <button onClick={handelFilHide} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Hide All</button>
+                        cotagoryFiter.length > 5 &&
+                      <div className="">
+                          <button onClick={handelFilHide} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Hide All</button>
+                      </div>
 
                     }
                 </div>
