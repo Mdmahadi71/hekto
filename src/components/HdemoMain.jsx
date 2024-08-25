@@ -1,21 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from './Container'
 import { FaCheckCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { RxCrossCircled } from "react-icons/rx";
 import { productremove } from './Slice/productSlice';
 import { Link } from 'react-router-dom'
+import { getDatabase, ref, onValue } from "firebase/database";
 
 
 const HdemoMain = () => {
     let cartdata = useSelector((state) => state.product.cartItem)
-
     let dispacth = useDispatch()
+    const db = getDatabase();
+    let [delivary , setdelivary] = useState([])
 
 
     let hendelremove = ((item) => {
         dispacth(productremove(item))
     })
+    useEffect(() => {
+        const starCountRef = ref(db, 'user/' );
+        onValue(starCountRef, (snapshot) => {
+            const arrr = [];
+            snapshot.forEach((item)=>{
+                arrr.push({...item.val()})
+            })
+            setdelivary(arrr)
+        });
+        
+
+    }, [db])
+    
 
 
 
@@ -24,6 +39,7 @@ const HdemoMain = () => {
         acc.totatQuntity += item.qun
         return acc
     }, { totalPrice: 0, totatQuntity: 0 })
+
     return (
         <div className=''>
 
@@ -46,62 +62,36 @@ const HdemoMain = () => {
                     </div>
 
                     <div className=" lg:flex justify-between ">
-                        <div className="lg:w-[68%]">
-                            <div className=" border-[2px] px-[20px] py-[30px] bg-[#F8F8FD]">
-                                <div className=" flex justify-between items-center">
-                                    <h3 className=' font-hakto font-medium text-[18px] text-[#1D3178]'>Contact Information</h3>
-                                    <p className=' font-hakto font-light text-[12px] text-[#C1C8E1]'>Already have an account? Log in</p>
+                        <div className="lg:w-[68%] mb-[50px] lg:mb-0">
+                            
+                            <div className=" border-[2px] border-[#E1E1E4] p-[40px] mt-[100px] bg-[#E1E1E4] rounded-[15px] shadow-2xl shadow-[#b7b7e3]">
+                                <div className=" text-center">
+                                    <h2 className=' font-hakto font-semibold text-[26px] text-[#1D3178]'>Shoping All Address</h2>
                                 </div>
-                                <div  className=" ">
-                                    <input type="text" placeholder='Email or mobile phone number'
-                                        className=' font-hakto font-light text-[18px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' />
-
-                                    <div className=" flex gap-x-[15px] items-center py-[30px]">
-                                        <FaCheckCircle className=' text-[#19D16F]' />
-                                        <p className='font-hakto font-light text-[12px] text-[#8A91AB]'>Keep me up to date on news and excluive offers</p>
+                                <div className=" text-center">
+                                    {delivary.map((item)=>(
+                                        <div className=" py-[10px]">
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Name:  {item.username} </h2>
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Email:  {item.email} </h2>
                                     </div>
-                                    <div className=" py-[20px]">
-                                        <h2 className=' font-hakto font-medium text-[18px] text-[#1D3178]'>Shipping address</h2>
+                                    ))}
+                                    
 
-                                        <div className=" flex justify-between items-center py-[20px]">
-                                            <div className=" w-[47%]">
-                                                <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='First name (optional)' />
-                                            </div>
-                                            <div className=" w-[47%]">
-                                                <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Last name' />
-                                            </div>
-                                        </div>
-                                        <div  className="py-[20px]">
-                                            <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Address' />
-                                        </div>
-                                        <div className="py-[20px]">
-                                            <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Appaetnentment,suit,e.t.c (optinal)' />
-                                        </div>
-                                        <div className="py-[20px]">
-                                            <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='City' />
-                                        </div>
-                                        <div className=" flex justify-between items-center py-[20px]">
-                                            <div className=" w-[47%]">
-                                                <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Bangladesh' />
-                                            </div>
-                                            <div className=" w-[47%]">
-                                                <input type="text" className=' font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none  w-full bg-[#F8F8FD]' placeholder='Postal Code' />
-                                            </div>
-                                            
-                                        </div>
-                                        <div  className="">
-                                                <input type="password" name="" className='font-hakto font-normal text-[12px] text-[#C1C8E1] border-b-[2px] pt-3 outline-none h-[40px]  w-full bg-[#F8F8FD]' placeholder='Password' id="" />
-                                            </div>
+                                    <div className=" py-[10px]">
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Phone Number: 01317159871</h2>
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Delivery Address: Mohammadpur/Nurjahan road /R-42 </h2>
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Delivary Date: Sep/10/2024 </h2>
+                                        <h3 className=' font-hakto font-medium text-[20px] text-[#000000]'>Delivery Time: 12:00 PM</h3>
                                     </div>
+                                    <div className=" py-[10px]">
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Product Num:  {totatQuntity}</h2>
+                                        <h2 className=' font-hakto font-medium text-[20px] text-[#000000]'>Product Price:  ${totalPrice}</h2>
+                                    </div>
+                                    <div className="">
+                                        <p className=' font-hakto font-medium text-[20px] text-cyan-400'>Paid Cash on Delivary</p>
+                                    </div>
+
                                 </div>
-
-                                <div  className="">
-                                    <button className=' border-[1px] border-[#FB2E86] bg-[#FB2E86] px-[20px] py-[15px] rounded-[5px] my-[30px]'>
-                                        <h3 className=' font-hakto font-medium text-[#FFFFFF] text-[18px]'>Continue Shipping</h3>
-                                    </button>
-                                </div>
-
-
                             </div>
                         </div>
                         <div className="lg:w-[29%]">
@@ -144,9 +134,9 @@ const HdemoMain = () => {
                                     <p className=' font-hakto font-medium text-[#8A91AB] text-[12px]'>Shipping & taxes calculated at checkout</p>
                                 </div>
                                 <Link to={'/OrderCompleted'} >
-                                <button className=' border-[1px] py-[15px] bg-[#19D16F] w-full'>
-                                    <a className=' font-hakto font-medium text-[#FFFFFF] text-[16px]'>Proceed To Order</a>
-                                </button>
+                                    <button className=' border-[1px] py-[15px] bg-[#19D16F] w-full'>
+                                        <a className=' font-hakto font-medium text-[#FFFFFF] text-[16px]'>Proceed To Order</a>
+                                    </button>
                                 </Link>
                             </div>
                         </div>

@@ -112,8 +112,16 @@ const EcommerceAcceories = () => {
                             <div className="flex gap-x-[10px] items-center lg:my-0 my-[10px]">
                                 <div className=" flex gap-x-[10px] items-center">
                                     <h3 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>View:</h3>
-                                    <IoGridSharp />
-                                    <FaList />
+                                    <Link to={'/ShopGrid'}>
+                                    <div className="">
+                                      <IoGridSharp /> 
+                                    </div>
+                                    </Link>
+                                    <Link to={'/ShopList'}>
+                                    <div className="">
+                                      <FaList />
+                                    </div>
+                                    </Link>
                                 </div>
                                 <input type="text" className=' border-[1px] border-[#E7E6EF] lg:w-[200px] w-full h-[40px] outline-none ' />
                             </div>

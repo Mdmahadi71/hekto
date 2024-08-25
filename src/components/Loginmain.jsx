@@ -19,7 +19,7 @@ const Loginmain = () => {
 
     let handelsingin = (() => {
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then((user) => {
                 toast('Log In successfull , Go to My account')
                 setTimeout(()=>{
                     navegate('/DemoPage')
