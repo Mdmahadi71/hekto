@@ -6,8 +6,9 @@ import Mauristhree from '../assets/Mauris3.png'
 import Maurisfure from '../assets/Mauris1.png'
 import { FaPenNib, FaRegCalendarAlt, FaSearch, FaFacebookF, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 import Maurisfive from '../assets/Mauris5.png'
-import newss from '../assets/Newsd.png'
+
 import { Link } from 'react-router-dom'
+import TextImg from './reusable/TextImg'
 
 const BlogPageMain = () => {
     return (
@@ -262,7 +263,7 @@ const BlogPageMain = () => {
                         </div>
                     </div>
                     <div className=" mx-auto py-[50px]">
-                        <img src={newss} alt="" />
+                        <TextImg/>
                     </div>
                 </Container>
             </div>

@@ -5,6 +5,7 @@ import checklist2 from '../assets/checklist.png'
 import Clock2 from '../assets/clock.png'
 import newss from '../assets/Newsd.png'
 import { Link } from 'react-router-dom'
+import TextImg from './reusable/TextImg';
 
 const OrderCompletedMain = () => {
     return (
@@ -49,7 +50,7 @@ const OrderCompletedMain = () => {
                     </div>
 
                     <div className=" mx-auto lg:py-7 mt-[30px]">
-                        <img src={newss} alt="" />
+                        <TextImg/>
                     </div>
                 </Container>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../components/Container'
 import { Link } from 'react-router-dom'
-import newss from '../assets/Newsd.png'
+import TextImg from '../components/reusable/TextImg'
 
 const FAQ = () => {
     return (
@@ -58,7 +58,7 @@ const FAQ = () => {
                     </div>
 
                     <div className=" mx-auto py-[40px]">
-                        <img src={newss} alt="" />
+                        <TextImg/>
                     </div>
                 </Container>
             </div>

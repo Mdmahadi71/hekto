@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import not404Img from '../assets/not404.png'
 import newss from '../assets/Newsd.png'
 import { Link } from 'react-router-dom'
+import TextImg from '../components/reusable/TextImg'
 
 const Not404 = () => {
     return (
@@ -22,7 +23,7 @@ const Not404 = () => {
                 </div>
 
                 <div className=" mx-auto py-[50px]">
-                    <img src={newss} alt="" />
+                    <TextImg/>
                 </div>
             </Container>
         </div>

@@ -7,7 +7,6 @@ import Mauristhree from '../assets/Mauris3.png'
 import Maurisfure from '../assets/Mauris1.png'
 import { FaPenNib, FaRegCalendarAlt, FaSearch, FaFacebookF, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 import Maurisfive from '../assets/Mauris5.png'
-import newss from '../assets/Newsd.png'
 import QuamImg from '../assets/Quam.png'
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { IoIosStar } from "react-icons/io";
@@ -15,6 +14,7 @@ import playerImg from '../assets/player.png'
 import { IoIosContact } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
+import TextImg from '../components/reusable/TextImg'
 
 
 
@@ -405,7 +405,7 @@ const SingleBlog = () => {
                     </div>
 
                     <div className=" mx-auto py-[50px]">
-                        <img src={newss} alt="" />
+                        <TextImg/>
                     </div>
                 </Container>
             </div>

@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import { CiMail } from "react-icons/ci";
 import Container from './Container'
 import { FaPhoneAlt, FaRegHeart, FaCartArrowDown } from "react-icons/fa";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { FcManager } from "react-icons/fc";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaBars } from "react-icons/fa";
-import { RxCross1 } from "react-icons/rx";
 
 const Menu = () => {
 
@@ -40,17 +37,23 @@ const Menu = () => {
                     <div className=" lg:w-[50%]">
                         <div className=" flex justify-end gap-x-6">
                             <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px]  items-center lg:my-0 my-4">
-                                <h2>English</h2>
-                                <RiArrowDropDownLine />
+                                <select className=' bg-[#7E33E0] outline-none' name="" id="">
+                                    <option className=' bg-[#7E33E0]' value="English">English</option>
+                                    <option className=' bg-[#7E33E0]'  value="Bangla">Bangla</option>
+                                </select>
                             </div>
                             <div className=" flex lg:gap-x-2 gap-x-1 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4">
-                                <h2>USD</h2>
-                                <RiArrowDropDownLine />
+                                <select className=' bg-[#7E33E0] outline-none' name="" id="">
+                                    <option className=' bg-[#7E33E0]' value="BDT">BDT</option>
+                                    <option className=' bg-[#7E33E0]'  value="USD">USD</option>
+                                </select>
                             </div>
+                            <Link to={'/LoginPage'}>
                             <div className=" flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4">
                                 <h2>Login</h2>
                                 <FcManager />
                             </div>
+                            </Link>
                             <Link to= '/Shopping'>
                             <div className=" relative cursor-pointer flex gap-x-2 font-hakto font-normal text-[#F1F1F1] text-[16px] items-center lg:my-0 my-4" >
                                     {data.length ? (<div className=" absolute top-[-15px] text-center lg:h-[20px] h-[15px] 

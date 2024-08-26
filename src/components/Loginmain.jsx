@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Container from './Container'
-import newss from '../assets/Newsd.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast ,ToastContainer} from 'react-toastify';
 import { IoMdEye ,IoMdEyeOff } from "react-icons/io";
+import TextImg from './reusable/TextImg';
 
 const Loginmain = () => {
     const auth = getAuth();
@@ -78,7 +78,7 @@ const Loginmain = () => {
                         </div>
                     </div>
                     <div className=" mx-auto py-[50px]">
-                        <img src={newss} alt="" />
+                        <TextImg/>
                     </div>
                 </Container>
             </div>

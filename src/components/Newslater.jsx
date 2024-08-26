@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from './Container'
-import newss from '../assets/Newsd.png'
+import TextImg from './reusable/TextImg'
 
 const Newslater = () => {
   return (
@@ -13,8 +13,8 @@ const Newslater = () => {
             <a className=' font-hakto font-medium text-[16px]'>Shop Now</a>
           </button>
         </div>
-        <div className=" lg:pl-[200px] w-full py-4">
-            <img src={newss}  alt="" />
+        <div className="">
+          <TextImg/>
         </div>
       </Container>
     </div>

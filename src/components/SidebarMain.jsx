@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Container from './Container'
 import { IoGridSharp } from "react-icons/io5";
-import { FaList, FaRegHeart, FaCartPlus ,FaBars} from "react-icons/fa";
+import { FaList, FaRegHeart, FaCartPlus, FaBars } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { IoMdStarOutline } from "react-icons/io";
 import { TbZoomIn } from "react-icons/tb";
@@ -15,6 +15,8 @@ import Post from './Pagenation/Post';
 import PagenationArrea from './Pagenation/PagenationArrea';
 import { Link } from 'react-router-dom'
 import { RxCross1 } from "react-icons/rx";
+import { useSelector } from 'react-redux';
+import TextImg from './reusable/TextImg';
 
 
 const SidebarMain = () => {
@@ -25,7 +27,10 @@ const SidebarMain = () => {
     let [brands, setbrands] = useState([])
     let [cotagoryFiter, setcotagoryFiter] = useState([])
     let [Multi, setMulti] = useState('')
-    let [catebares,setcatebares] = useState(false)
+    let [catebares, setcatebares] = useState(false)
+    let [pricelow, setpricelow] = useState('')
+    let [priceHigh, setpriceHigh] = useState('')
+    let [priceAll ,setpriceAll] = useState([])
 
 
     let lastpage = pagenumber * parpage
@@ -60,6 +65,23 @@ const SidebarMain = () => {
         setMulti('ActiveMulti')
     }
 
+    let handelshowchange = (e)=>{
+        setparpage(e.target.value)
+    }
+
+    let handelpricess = (value)=>{
+        setpricelow(value.low)
+        setpriceHigh(value.high)
+        let priceFiler = data.filter((item)=> item.price > value.low && item.price < value.high )
+        setpriceAll(priceFiler)
+    }
+
+    
+
+
+
+
+
     return (
         <div>
             <div className=' bg-[#F6F5FF] py-[90px]'>
@@ -83,8 +105,12 @@ const SidebarMain = () => {
                         <div className=" lg:flex justify-between">
                             <div className=" flex justify-between">
                                 <div className=" flex gap-x-[10px] items-center">
-                                    <h5 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>Per Page:</h5>
-                                    <input type="text" className=' border-[1px] border-[#E7E6EF] w-[80px] h-[40px] outline-none ' />
+                                    <label htmlFor="" className='font-hakto font-medium text-[#3F509E] text-[16px]'>Per Page:</label>
+                                    <select onChange={handelshowchange} name="" id="" className='border-[1px] border-[#E7E6EF] w-[80px] h-[40px] outline-none font-hakto font-medium text-[#3F509E] text-[16px]'>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
                                 </div>
                                 <div className="flex gap-x-[10px] items-center">
                                     <h4 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>Sort By:</h4>
@@ -109,11 +135,11 @@ const SidebarMain = () => {
                 </div>
 
                 <div className=" lg:flex justify-between">
-                    <div onClick={()=>setcatebares(!catebares)} className=" lg:hidden flex gap-x-[20px] items-center">
+                    <div onClick={() => setcatebares(!catebares)} className=" lg:hidden flex gap-x-[20px] items-center">
                         <h3 className=' font-hakto font-medium text-[20px] '>Catagory Bars</h3>
-                        <h2>{catebares==true ? <RxCross1/> : <FaBars/>}</h2>
+                        <h2>{catebares == true ? <RxCross1 /> : <FaBars />}</h2>
                     </div>
-                    <div className={`lg:w-[25%] absolute lg:static duration-300 ${catebares==true ? " top-[800px] left-[0] bg-[#dfc9c9]" :" top-[800px] left-[-500px] "}`}>
+                    <div className={`lg:w-[25%] absolute lg:static duration-300 ${catebares == true ? " top-[800px] left-[0] bg-[#dfc9c9]" : " top-[800px] left-[-500px] "}`}>
                         <div className="">
                             <div className="">
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Product Brand</h2>
@@ -155,7 +181,6 @@ const SidebarMain = () => {
                                         <FaRegStar />
                                     </div>
                                     <p>(2341)</p>
-
                                 </div>
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <div className="">
@@ -199,11 +224,7 @@ const SidebarMain = () => {
                                     <p>(25)</p>
 
                                 </div>
-
-
                             </div>
-
-
 
                             <div className="">
                                 <div className="">
@@ -224,20 +245,17 @@ const SidebarMain = () => {
                                 <h2 className=' font-hakto font-semibold text-[#151875] text-[20px] border-b-[1px] border-[#151875] py-1 inline-block'>Price Filter</h2>
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$0.00 - $150.00</p>
+                                    <p onClick={()=>handelpricess({low:0 , high:10})} className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$0.00 - $9.99</p>
                                 </div>
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$150.00 - $350.00</p>
+                                    <p onClick={()=>handelpricess({low:10 , high:20})} className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$10.00 - $19.99</p>
                                 </div>
                                 <div className=" flex gap-x-[10px] items-center py-2">
                                     <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$150.00 - $504.00</p>
+                                    <p onClick={()=>handelpricess({low:20 , high:30})} className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$10.00 - $19.99</p>
                                 </div>
-                                <div className=" flex gap-x-[10px] items-center py-2">
-                                    <MdCheckBox className=' text-[#FF3EB2]' />
-                                    <p className=' font-hakto font-light text-[16px] text-[#7E81A2]'>$450.00 +</p>
-                                </div>
+                                
 
                             </div>
                             <div className="relative py-[30px]">
@@ -285,7 +303,7 @@ const SidebarMain = () => {
                         </div>
                     </div>
                     <div className="lg:w-[75%]">
-                        <Post Allpage={Allpage} cotagoryFiter={cotagoryFiter} Multi={Multi} />
+                        <Post priceAll={priceAll} Allpage={Allpage} cotagoryFiter={cotagoryFiter} Multi={Multi} />
                         <div className=" text-end">
                             <PagenationArrea pageNumber={pageNumber} prewPage={prewPage} nextPage={nextPage} pageAreaNbr={pageAreaNbr} />
                         </div>
@@ -293,9 +311,10 @@ const SidebarMain = () => {
 
                 </div>
 
-                <div className=" mx-auto py-4">
-                    <img src={newss} alt="" />
+                <div className="  ">
+                   <TextImg/>
                 </div>
+                
             </Container>
         </div>
     )

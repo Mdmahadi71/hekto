@@ -78,6 +78,10 @@ const EcommerceAcceories = () => {
     let Lovecartt = ((item)=>{
         dispacth(addtoCart({...item , qun:1}))
     })
+    let handelshowchange = (e) =>{
+        setparpage(e.target.value);
+        
+    }
 
     return (
         <div>
@@ -99,14 +103,20 @@ const EcommerceAcceories = () => {
                     <div className="lg:w-[50%]">
                         <div className=" lg:flex justify-between">
                           <div className=" flex justify-between">
-                          <div className=" flex gap-x-[10px] items-center">
-                                <h5 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>Per Page:</h5>
-                                <input type="text" className=' border-[1px] border-[#E7E6EF] w-[80px] h-[40px] outline-none ' />
+                            <div className="flex gap-x-[10px] items-center">
+                                <label htmlFor="" className='font-hakto font-medium text-[#3F509E] text-[16px]'>Per Page:</label>
+                                <select onChange={handelshowchange} name="" id="" className='border-[1px] border-[#E7E6EF] w-[80px] h-[40px] outline-none font-hakto font-medium text-[#3F509E] text-[16px]'>
+                                    <option value="8">8</option>
+                                    <option value="12">12</option>
+                                    <option value="16">16</option>
+                                </select>
                             </div>
                             <div className="flex gap-x-[10px] items-center">
                                 <h4 className=' font-hakto font-medium text-[#3F509E] text-[16px]'>Sort By:</h4>
-                                <input type="text" className=' border-[1px] border-[#E7E6EF] w-[100px] h-[40px] outline-none font-hakto font-medium text-[#8A8FB9] text-[12px] pl-[5px]'
+                                <input type="text" className=' border-[1px] border-[#E7E6EF] w-[100px] h-[40px] outline-none font-hakto 
+                                font-medium text-[#8A8FB9] text-[12px] pl-[5px]'
                                     placeholder='Best Match ' />
+                               
                             </div>
                           </div>
                             <div className="flex gap-x-[10px] items-center lg:my-0 my-[10px]">

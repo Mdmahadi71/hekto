@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Container'
 import fotter from '../assets/Hekto.png'
 import { FaFacebookSquare,FaInstagram ,FaTwitter  } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Fotter = () => {
   return (
@@ -47,7 +48,7 @@ const Fotter = () => {
                 <div className="">
                   <ul>
                     <li className=' font-hakto font-normal text-[#000000] text-[22px] py-[10px]'>Pages</li>
-                    <li className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'>Blog</li>
+                    <li className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'><Link to={'/BlogPage'}>Blog</Link></li>
                     <li className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'>Browse the Shop</li>
                     <li className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'>Category</li>
                     <li className=' font-hakto font-normal text-[#8A8FB9] text-[16px] py-[10px]'>Pre-Built Pages</li>

@@ -10,7 +10,7 @@ import axios from 'axios';
 import { IoIosStar } from "react-icons/io";
 import { IoMdStarHalf } from "react-icons/io";
 
-const Post = ({ Allpage, cotagoryFiter, Multi }) => {
+const Post = ({ Allpage, cotagoryFiter, Multi,priceAll }) => {
     let [filtervags, setfiltervags] = useState([])
     let [count, setCount] = useState(true)
     let [RatingProduct,setRatingProduct] = useState([])
@@ -64,7 +64,66 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
     
     return (
         <div>
-            {cotagoryFiter.length > 0 ?
+            {priceAll.length > 0 ? 
+                <div className="">
+                {priceAll.map((item) => (
+                    <div className="">
+                        <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
+                            <div className=" flex gap-x-[40px] items-center">
+                                <Link to={`/Shopsidebar/${item.id}`}>
+                                    <div className="">
+                                        <img src={item.thumbnail} alt="" />
+                                    </div>
+                                </Link>
+                                <div className=" w-[50%]">
+                                    <div className=" flex  items-center gap-x-[20px] py-[8px]">
+                                        <h3 className=' font-hakto font-medium text-[#111C85] text-[20px]'>{item.title}</h3>
+                                        <div className=" flex gap-x-[10px] ">
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#DE9034]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#EC42A2]"></div>
+                                            <div className=" w-[10px] h-[10px] rounded-[50%] bg-[#8568FF]"></div>
+                                        </div>
+                                    </div>
+                                    <div className=" lg:flex gap-x-[20px] items-center py-4">
+                                    <div className="flex gap-x-[20px]">
+                                    <h5 className=' font-hakto font-normal text-[16px] text-[#111C85] hover:text-[#FF2AAA] duration-300'>${item.price}</h5>
+                                    <h5 className=' font-hakto font-normal text-[16px] text-[#FF2AAA] hover:text-[#111C85] duration-300'>${item.price}</h5>
+                                    </div>
+                                    <div className=" flex gap-x-[10px] text-[#FFC416]">
+                                     
+                                        {Reating}
+                                    </div>
+                                </div>
+                                    <p className=' font-hakto font-light text-[17px] text-[#9295AA]'>{item.description}</p>
+                                    <div className=" flex gap-x-[40px] pt-[18px]">
+                                        <div onClick={() => cartNav(item)} className="">
+                                            <FaCartPlus />
+                                        </div>
+                                        <TbZoomIn />
+                                        <div onClick={() => handelLove(item)} className="">
+                                            <FaRegHeart />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+         
+                    </div>
+                ))
+                }
+                {count ? cotagoryFiter.length > 5 &&
+                    <div className="">
+                        <button onClick={handelFilShow} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Show All</button>
+                    </div>
+                    :
+                    cotagoryFiter.length > 5 &&
+                  <div className="">
+                      <button onClick={handelFilHide} className='h-[50px] font-dm font-normal w-[100px] border-[1px] border-[#262626] rounded-[5px] hover:bg-[#262626] hover:text-[#fff] duration-500'>Hide All</button>
+                  </div>
+                }
+            </div>
+               :
+            cotagoryFiter.length > 0 ?
                 <div className="">
                     {filtervags.map((item) => (
                         <div className="">
@@ -123,11 +182,8 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
 
                     }
                 </div>
-
                 :
                 <div className={`${Multi == "ActiveMulti" ?
-                    
-                   
                     (<div className=" flex flex-wrap">
                         {Allpage.map((item)=>(
                             <div className="w-[24%] flex flex-wrap">
@@ -158,8 +214,6 @@ const Post = ({ Allpage, cotagoryFiter, Multi }) => {
                              ))}
                          </div>)
                     :
-
-
                     ('')}`}>
                     {Allpage.map((item) => (
                         <div className=" border-[1px]  px-4 py-4 my-[25px] shadow-sm">
