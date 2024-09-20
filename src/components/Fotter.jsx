@@ -3,6 +3,7 @@ import Container from './Container'
 import fotter from '../assets/Hekto.png'
 import { FaFacebookSquare,FaInstagram ,FaTwitter  } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import BackBottomTotop from './BackBottomTotop';
 
 const Fotter = () => {
   return (
@@ -70,7 +71,7 @@ const Fotter = () => {
               <FaTwitter />
           </div>
         </div>
-
+      <BackBottomTotop/>
 
       </Container>
     </div>

@@ -1,0 +1,36 @@
+import React, { useEffect, useState } from 'react'
+import Container from './Container'
+import { SlArrowUp } from "react-icons/sl";
+
+
+const BackBottomTotop = () => {
+    let [backtoTop , setbacktoTop] = useState(false)
+
+    useEffect(()=>{
+        window.addEventListener('scroll' ,()=>{
+            if(window.scrollY > 100){
+                setbacktoTop(true)
+            }else{
+                setbacktoTop(false)
+            }
+        })
+    },[])
+    let scrollUp=(()=>{
+        window.scrollTo({
+             top:'0',
+            behavior:'smooth',
+           
+        })
+    })
+
+
+  return (
+    <div>
+      <Container>
+        <button className=' w-[40px] h-[40px] bottom-[50px] lg:right-[50px] right-[10px] fixed text-[40px]  bg-sky-500' onClick={scrollUp}><SlArrowUp/></button>
+      </Container>
+    </div>
+  )
+}
+
+export default BackBottomTotop

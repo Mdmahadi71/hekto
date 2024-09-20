@@ -72,7 +72,7 @@ const Navbar = () => {
             <ul className={`lg:flex justify-center text-center gap-x-[35px] absolute lg:static duration-300 ${show == true ? 'top-[270px] left-0 bg-[#EBF4F3] w-full' : 'top-[270px] left-[-250px]'}`}>
               <li onClick={() => setActivemanu('Home')}>
                 <Link to='/'>
-                  <a className={`${Activemanu === 'Home' ? ' font-hakto font-medium text-[16px]  text-[#FB2E86]' : 'font-hakto font-medium text-[16px] text-[#0D0E43]0'}`}>Home</a>
+                  <a className={`${Activemanu === 'Home' ? ' font-hakto font-medium text-[16px]  text-[#FB2E86]' : 'font-hakto font-medium text-[16px] text-[#0D0E43]'}`}>Home</a>
                 </Link>
               </li>
               <li onClick={() => setActivemanu('Shop')}>
