@@ -28,7 +28,7 @@ const BackBottomTotop = () => {
     <div>
         {backtoTop &&
       <Container>
-        <button className=' w-[30px] h-[30px] bottom-[50px] lg:right-[50px] right-[10px] fixed text-[30px]  bg-sky-500' onClick={scrollUp}><SlArrowUp/></button>
+        <button className='lg:w-[50px] lg:h-[50px]  w-[30px] h-[30px] bottom-[50px] lg:right-[50px] right-[10px] fixed lg:text-[50px] rounded-[5px] text-[30px]  bg-sky-500' onClick={scrollUp}><SlArrowUp/></button>
       </Container>
       }
     </div>
